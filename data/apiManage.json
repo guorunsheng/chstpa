@@ -1,0 +1,93 @@
+{
+    "navInfoApi": {
+        "dev": "./mock-data/navInfo.json",
+        "online": "http://chstpa.bdpku.com/navInfo/navList"
+    },
+    "loginApi": {
+        "dev": "./mock-data/login.json",
+        "online": "http://chstpa.bdpku.com/login"
+    },
+    "registeredApi": {
+        "dev": "./mock-data/registered.json",
+        "online": "http://chstpa.bdpku.com/registered"
+    },
+    "yzmApi": {
+        "dev": "./mock-data/yzm.json",
+        "online": "http://chstpa.bdpku.com/verify/getVerifyCode" 
+    },
+    "exitLoginApi": {
+        "dev": "./mock-data/exitLogin.json",
+        "online": "http://chstpa.bdpku.com/logout" 
+    },
+    "newsApi": {
+        "dev": "./mock-data/news.json",
+        "online": "http://chstpa.bdpku.com/article/getNews" 
+    },
+    "meetingApi": {
+        "dev": "./mock-data/meeting.json",
+        "online": "http://chstpa.bdpku.com/article/getArticle" 
+    },
+    "memberApi": {
+        "dev": "./mock-data/member.json",
+        "online": "http://chstpa.bdpku.com/article/getArticle" 
+    },
+    "libraryApi": {
+        "dev": "./mock-data/library.json",
+        "online": "http://chstpa.bdpku.com/article/getArticle" 
+    },
+    "learningDataApi": {
+        "dev": "./mock-data/learningData.json",
+        "online": "http://chstpa.bdpku.com/article/getArticle" 
+    },
+    "allPagesApi": {
+        "dev": "./mock-data/allPages.json",
+        "online": "http://chstpa.bdpku.com/article/getArticle" 
+    },
+    "specificPagesApi": {
+        "dev": "./mock-data/specificPages.json",
+        "online": "http://chstpa.bdpku.com/article/getArticle" 
+    },
+    "setPhoneCodeApi": {
+        "dev": "./mock-data/setPhoneCode.json",
+        "online": "http://chstpa.bdpku.com/verify/getPhoneCode" 
+    },
+    "foundPasswordApi": {
+        "dev": "./mock-data/foundPassword.json",
+        "online": "http://chstpa.bdpku.com/common/foundPassword" 
+    },
+    "vipSearchApi": {
+        "dev": "./mock-data/vipSearch.json",
+        "online": "http://chstpa.bdpku.com/member/searchMember"  
+    },
+    "uploadPageApi": {
+        "dev": "./mock-data/uploadPage.json",
+         "online": "http://chstpa.bdpku.com/article/saveArticle" 
+    },
+    "pageSortApi": {
+        "dev": "./mock-data/pageSort.json",
+         "online": "http://chstpa.bdpku.com/article/getArticleCate" 
+    },
+    "pageSourceApi": {
+        "dev": "./mock-data/pageSource.json",
+        "online": "http://chstpa.bdpku.com/article/getArticleResource"
+    },
+    "pageListApi": {
+        "dev": "./mock-data/pageList.json",
+        "online": "http://chstpa.bdpku.com/article/searchArticle"
+    },
+    "delPageApi": {
+        "dev": "./mock-data/delPage.json",
+        "online": "http://chstpa.bdpku.com/article/delArticle"
+    },
+    "tableDownloadListApi": {
+        "dev": "./mock-data/tableDownloadList.json",
+        "online": "http://chstpa.bdpku.com/upload/getDownload"
+    },
+    "tableDownloadApi": {
+        "dev": ""
+    },
+    "carouselImgApi": {
+        "dev": "./mock-data/carouselImg.json",
+        "online": "http://chstpa.chstpa.com/slideShow"
+    }
+}
