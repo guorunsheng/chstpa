@@ -1,8 +1,8 @@
 {
-  "name": "gw",
+  "name": "chstpa",
   "version": "1.0.0",
   "description": "A Vue.js project",
-  "author": "luojuna <luojuna@jiedaibao.com>",
+  "author": "Rision <Rision666@163.com>",
   "private": true,
   "scripts": {
     "dev": " concurrently \"npm run apiserve ENV=dev\" \"npm run start\" ",

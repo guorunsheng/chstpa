@@ -20,6 +20,9 @@
     <div>
       <carouselAbout></carouselAbout>
     </div>
+    <div>
+      <selectchoose></selectchoose>
+    </div>
   </div>
 </template>
 <script>
@@ -29,7 +32,7 @@ import oper from "../Modules/oper";
 import tabNews from "../Modules/tab-news";
 import infoArea from "../Modules/info-area";
 import carouselAbout from "../Modules/carousel-about";
-
+import selectchoose from "../Modules/selectchoose";
 export default {
   components: {
     carousel,
@@ -38,6 +41,7 @@ export default {
     tabNews,
     infoArea,
     carouselAbout,
+    selectchoose,
   },
   methods: {
     loginToast(v) {
