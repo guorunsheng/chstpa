@@ -6,6 +6,7 @@ import 'element-ui/lib/theme-chalk/index.css'
 import App from './App'
 import router from './router'
 import axios from 'axios'
+import $ from 'jQuery'
 
 Vue.use(ElementUI)
 Vue.config.productionTip = false

@@ -1,4 +1,4 @@
-<template>
+<template scope="scope">
     <div class="upload-list">
         <el-row class="row-search">
             <el-col :span='16'>
@@ -9,21 +9,28 @@
             </el-col>
         </el-row>
         <el-table
-            :data="pageList"
+            :data="pagesData"
             stripe
             border
-            style="width: 100%">
+            style="width: 100%">   
             <el-table-column
-            prop="name"
+            prop="title"
             label="名称"
             >
+                <template slot-scope="scope">
+                    <span style="margin-left: 10px"><img :src="scope.row.icon" class="pre-cion">{{scope.row.title}}</span>
+                </template>
+            </el-table-column>
+            <el-table-column
+            prop="date"
+            label="日期">
+
             </el-table-column>
             <el-table-column
             prop="oper"
-            label="操作">
+            label="操作" style="width: 20%">
             <template slot-scope="scope">
-                <el-button @click="delPage(scope.row.pageId)" type="text" size="small">删除</el-button>
-                <el-button @click="edit(scope.row.pageId)" type="text" size="small">编辑</el-button>
+                <el-button @click="delPage(scope.row.id)" type="text" size="small">删除</el-button>
             </template>
             </el-table-column>
         </el-table>
@@ -41,8 +48,9 @@
 export default {
     data() {
         return {
-            pageList: [],
+            pagesData: [],
             searchContent: '',
+            initNum: 0,
             nums: 0
         }
     },
@@ -52,23 +60,23 @@ export default {
     methods: {
         getAllPages(v, num = 0) {
            this.http
-          .get('http://chstpa.chstpa.com/article/searchArticle', {
+          .get('http://chstpa.chstpa.com/upload/getDownload', {
               params: {
-                  name: String(v),
+                  content: String(v),
                   num: num
               }
           })
           .then(res => {
               if (+res.err.code === 200) {
                 this.nums = res.data.nums
-                this.pageList = res.data.pageList
+                this.pagesData = res.data.pages
             }
           })
         },
         delPage(id) {
             let _this = this
             this.http
-            .get('http://chstpa.chstpa.com/article/delArticle', {
+            .get('http://chstpa.chstpa.com/upload/deleteDownload', {
                 params: {
                     id
                 }

@@ -8,6 +8,10 @@ import YzmForm from '@/components/YzmForm'
 import VIPSearch from '@/components/VIPSearch'
 import DownLoad from '@/components/DownLoad'
 import NotFound from '@/components/NotFound'
+import Member from '@/components/Member/member'
+import step1 from '@/components/Member/step1'
+import step2 from '@/components/Member/step2'
+import step3 from '@/components/Member/step3'
 
 import middle from '@/managePlatform/middle'
 import publishPage from '@/managePlatform/publishPage'
@@ -54,6 +58,28 @@ const router = new Router({
           path: 'downLoad',
           name: '表格下载',
           component: DownLoad
+        },
+        {
+          path: 'member',
+          name: '会员认证',
+          component: Member,
+          children: [
+            {
+              path: 'step1',
+              name: '会员认证',
+              component: step1
+            },
+            {
+              path: 'step2',
+              name: '会员认证',
+              component: step2
+            },
+            {
+              path: 'step3',
+              name: '会员认证',
+              component: step3
+            }
+          ]
         }
       ]
     },
@@ -90,7 +116,8 @@ const router = new Router({
       name: 'nopage',
       component: NotFound
     }
-  ]
+  ],
+  mode: 'history'
 })
 
 export default router
