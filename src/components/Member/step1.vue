@@ -1,5 +1,5 @@
 <template>
-<el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="300px" class="demo-ruleForm" style="background-color:red;">
+<el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="300px" class="demo-ruleForm">
   <el-form-item label="姓名" prop="name" style="padding-top:30px;">
     <el-input v-model="ruleForm.name" style="width: 30%;margin-left:20px;"></el-input>
   </el-form-item>
@@ -37,7 +37,10 @@
     <img v-if="imageUrl" :src="imageUrl" class="avatar" >
     <i v-else class="el-icon-plus avatar-uploader-icon"></i>
     </el-upload>
-    <!-- <el-input v-model="form.reTwoInchPhoto" v-show class="reTwoInchPhoto"></el-input> -->
+  </el-form-item>
+  <el-input v-model="ruleForm.reTwoInchPhotoPath" v-show class="reTwoInchPhotoPath"></el-input>
+  <el-form-item>
+
   </el-form-item>
   <el-form-item>
     <el-button type="primary" @click="submitForm('ruleForm')" style="margin-left:20px;width:90px;height:40px; margin-bottom:20px;">下一步</el-button>
@@ -61,7 +64,8 @@
           phone: '',
           email: '',
           presentAdd: '',
-          reTwoInchPhoto: ''
+          reTwoInchPhoto: '',
+          reTwoInchPhotoPath: ''
         },
         rules: {
           name: [
@@ -102,13 +106,15 @@
                 this.imageUrl = res.data.member.reTwoInchPhoto
                 console.log(this.imageUrl)
             }else{
-console.log(res)
+                console.log(res)
             }
         })
     },
     methods: {
         
       handleAvatarSuccess(res, file) {
+        this.ruleForm.reTwoInchPhoto = res.data.url;
+        this.ruleForm.reTwoInchPhotoPath = res.data.path;
         this.imageUrl = URL.createObjectURL(file.raw);
       },
       beforeAvatarUpload(file) {
@@ -123,36 +129,36 @@ console.log(res)
         }
         return isJPG && isLt2M;
       },
-      uploadHttp: function(file) {
-			var fd = new FormData();
-			fd.append('file', file.file);
-			$.ajax({
-                url:"http://127.0.0.1:8888/member/uploadPhoto",
-				type: 'post',
-				contentType: false,
-				data: fd,
-				async: false,
-				processData: false,  //使用ajax上传图片要设置的
-				success: function(res) {
-                    var parsedJson = jQuery.parseJSON(res);
-                    //console.log(parsedJson);
-					if (parsedJson.err.code=="200") {
-						console.log(parsedJson.data);
-						//上传成功
-					} else {
-                        //上传失败
-                        console.log(res);
-						return;
-					}
+    //   uploadHttp: function(file) {
+	// 		var fd = new FormData();
+	// 		fd.append('file', file.file);
+	// 		$.ajax({
+    //             url:"http://127.0.0.1:8888/member/uploadPhoto",
+	// 			type: 'post',
+	// 			contentType: false,
+	// 			data: fd,
+	// 			async: false,
+	// 			processData: false,  //使用ajax上传图片要设置的
+	// 			success: function(res) {
+    //                 var parsedJson = jQuery.parseJSON(res);
+    //                 //console.log(parsedJson);
+	// 				if (parsedJson.err.code=="200") {
+	// 					console.log(parsedJson.data);
+	// 					//上传成功
+	// 				} else {
+    //                     //上传失败
+    //                     console.log(res);
+	// 					return;
+	// 				}
  
-				},
-                error: function(res) {
-				    alert("请求错误");
-				}
+	// 			},
+    //             error: function(res) {
+	// 			    alert("请求错误");
+	// 			}
  
-			});
+	// 		});
  
-		},
+	// 	},
       submitForm(ruleForm) {
         this.$refs[ruleForm].validate((valid) => {
           if (valid) {
