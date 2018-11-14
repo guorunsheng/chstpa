@@ -1,6 +1,6 @@
 <template>
-  <div >
-    <el-steps :active="active" finish-status="success" >
+  <div class="all" >
+    <el-steps :active="active" finish-status="success">
     <el-step title="步骤 1"></el-step>
     <el-step title="步骤 2"></el-step>
     <el-step title="步骤 3"></el-step>
@@ -18,11 +18,11 @@ export default {
     }
   },
    created() {
-    this.$router.push('/member/step1')
+    this.$router.push('/member/step3')
   },
   methods: {
-    next(v) {
-        console.log(v);
+    next() {
+        //console.log(v);
         //this.active = step;
          if (this.active++ > 2) this.active = 0;
       }
@@ -32,12 +32,12 @@ export default {
   }
 }
 </script>
-<style>
-  /* .el-button>span {
-    font-size: 14px;
-  } */
-</style>
 
 <style lang="scss" scoped type="text/css">
-
+  .all{
+   width: 1100px;
+   height: 1100px;
+   margin: 0px auto;
+   margin-top: 10px;
+  }
 </style>

@@ -102,7 +102,9 @@ export default {
     .page-list {
         padding-top: 2em;
         .row-search {
+           // margin-bottom: 1em;
             margin-bottom: 1em;
+            margin-top: -15px;
         }
         .pag {
             text-align: right;

@@ -146,7 +146,9 @@ export default {
 
 <style lang='scss' scoped>
     .publish-wrap {
-        padding-top: 2em;
+       // padding-top: 2em;
+         padding-top: 1em;
+         margin-left: -37px;
     }
     
 </style>

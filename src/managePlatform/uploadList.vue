@@ -103,9 +103,12 @@ export default {
 </script>
 <style scoped lang='scss'>
     .upload-list {
-        padding-top: 2em;
+        padding-top: 20px;
+       // padding-top: 2em;
         .row-search {
-            margin-bottom: 1em;
+        margin-bottom: 10px;
+        margin-top: -4px;
+        //    margin-bottom: 1em;
         }
         .pag {
             text-align: right;

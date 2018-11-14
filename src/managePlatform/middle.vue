@@ -32,7 +32,7 @@
                 </el-menu-item>
                 </el-menu>
             </el-col>
-            <el-col class="col-wrap" :span='16' :offset='2'>
+            <el-col class="col-wrap1" :span='16' :offset='2'>
                 <div class="main-oper">
                     <el-button size='small' type='success' @click="jumpTo('/')">回到官网</el-button>
                     <el-button size='small' type='danger' @click="exitFc">退出登录</el-button>
@@ -72,14 +72,29 @@ export default {
 
 <style lang='scss' scoped>
 .back-all-wrap {
-    height: 100vh;
+    //height: 100vh;
+    width: 1000PX;
+    background-color:white;
+    margin: 0PX auto;
+    height: 180vh;
     .tac {
+        //height: 100%;
         height: 100%;
+        margin-left: 20PX;
+        margin-top: -20px;
         .col-wrap {
+            //height: 100%;
             height: 100%;
+            width:170px;
+            margin-top: 25px;
             .main-oper {
                 margin-top: 2em;
             }
+        }
+         .col-wrap1{
+         width: 750px;
+         margin-left: 25px;
+         margin-top: 40px;
         }
     }
 }

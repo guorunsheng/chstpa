@@ -18,6 +18,7 @@ export default {
 </script>
 <style scoped lang='scss'>
     .upload-file {
-        margin-top: 2em;
+        //margin-top: 2em;
+         margin-top: 17px;
     }
 </style>

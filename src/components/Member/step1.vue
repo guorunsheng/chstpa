@@ -1,31 +1,31 @@
 <template>
-<el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
-  <el-form-item label="姓名" prop="name">
-    <el-input v-model="ruleForm.name" style="width: 10%;"></el-input>
+<el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="300px" class="demo-ruleForm" style="background-color:red;">
+  <el-form-item label="姓名" prop="name" style="padding-top:30px;">
+    <el-input v-model="ruleForm.name" style="width: 30%;margin-left:20px;"></el-input>
   </el-form-item>
   <el-form-item label="性别" prop="sex">
-    <el-select v-model="ruleForm.sex" placeholder="请选择姓别" style="width: 10%;">
+    <el-select v-model="ruleForm.sex" placeholder="请选择姓别" style="width: 30%;margin-left:20px;">
       <el-option label="男" value="0"></el-option>
       <el-option label="女" value="1"></el-option>
     </el-select>
   </el-form-item>
   <el-form-item label="籍贯" prop="nativePlace">
-    <el-input v-model="ruleForm.nativePlace" style="width: 10%;"></el-input>
+    <el-input v-model="ruleForm.nativePlace" style="width: 30%;margin-left:20px;"></el-input>
   </el-form-item>
   <el-form-item label="职称/职务" prop="rankName">
-    <el-input v-model="ruleForm.rankName" style="width: 10%;"></el-input>
+    <el-input v-model="ruleForm.rankName" style="width: 30%;margin-left:20px;"></el-input>
   </el-form-item>
   <el-form-item label="办公电话" prop="tel">
-    <el-input v-model="ruleForm.tel" style="width: 10%;"></el-input>
+    <el-input v-model="ruleForm.tel" style="width: 30%;margin-left:20px;"></el-input>
   </el-form-item>
   <el-form-item label="手机号码" prop="phone">
-    <el-input v-model="ruleForm.phone" style="width: 10%;"></el-input>
+    <el-input v-model="ruleForm.phone" style="width: 30%;margin-left:20px;"></el-input>
   </el-form-item>
   <el-form-item label="电子邮箱" prop="email">
-    <el-input v-model="ruleForm.email" style="width: 15%;"></el-input>
+    <el-input v-model="ruleForm.email" style="width: 30%;margin-left:20px;"></el-input>
   </el-form-item>
   <el-form-item label="现居地址" prop="presentAdd">
-    <el-input v-model="ruleForm.presentAdd" style="width: 20%;"></el-input>
+    <el-input v-model="ruleForm.presentAdd" style="width: 40%;margin-left:20px;"></el-input>
   </el-form-item>
   <el-form-item label="近期二寸照片" prop="reTwoInchPhoto">
       <el-upload
@@ -33,15 +33,15 @@
     action="http://127.0.0.1:8888/member/uploadPhoto"
     :show-file-list="false"
     :on-success="handleAvatarSuccess"
-    :before-upload="beforeAvatarUpload">
-    <img v-if="imageUrl" :src="imageUrl" class="avatar">
+    :before-upload="beforeAvatarUpload"  style="margin-left:20px;">
+    <img v-if="imageUrl" :src="imageUrl" class="avatar" >
     <i v-else class="el-icon-plus avatar-uploader-icon"></i>
     </el-upload>
     <!-- <el-input v-model="form.reTwoInchPhoto" v-show class="reTwoInchPhoto"></el-input> -->
   </el-form-item>
   <el-form-item>
-    <el-button type="primary" @click="submitForm('ruleForm')">下一步</el-button>
-    <el-button @click="resetForm('ruleForm')">重置</el-button>
+    <el-button type="primary" @click="submitForm('ruleForm')" style="margin-left:20px;width:90px;height:40px; margin-bottom:20px;">下一步</el-button>
+    <el-button @click="resetForm('ruleForm')" style="width:90px;height:40px;">重置</el-button>
   </el-form-item>
  </el-form>
 </template>
@@ -160,11 +160,11 @@ console.log(res)
             .post('http://127.0.0.1:8888/member/FirInfo', this.ruleForm)
             .then(res => {
                 if (+res.err.code === 200) {
-                    alert("200");
-                    this.$parent.next("1");
-                    // this.$emit('step',"1");
-                    console.log("step");
-                   // this.$router.push('step2')
+                    //alert("200");
+                    //this.$emit('step',"1");
+                    //console.log("step");
+                    this.$parent.next();
+                    this.$router.push('step2')
                     
                 } else {
                     this.$message.error(res.err.desc);
@@ -189,6 +189,11 @@ console.log(res)
 }
 </script>
 <style>
+  .demo-ruleForm{
+    width: 900px;
+    margin: 0px auto;
+    margin-top: -25px;
+  }
   .avatar-uploader .el-upload {
     border: 1px dashed #d9d9d9;
     border-radius: 6px;
