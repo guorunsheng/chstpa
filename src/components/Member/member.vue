@@ -18,7 +18,7 @@ export default {
     }
   },
    created() {
-    this.$router.push('/member/step3')
+    this.$router.push('/member/step2')
   },
   methods: {
     next() {
@@ -36,7 +36,7 @@ export default {
 <style lang="scss" scoped type="text/css">
   .all{
    width: 1100px;
-   height: 1100px;
+   height: 1300px;
    margin: 0px auto;
    margin-top: 10px;
   }
