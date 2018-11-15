@@ -12,6 +12,7 @@ import Member from '@/components/Member/member'
 import step1 from '@/components/Member/step1'
 import step2 from '@/components/Member/step2'
 import step3 from '@/components/Member/step3'
+import step4 from '@/components/Member/step4'
 
 import middle from '@/managePlatform/middle'
 import publishPage from '@/managePlatform/publishPage'
@@ -78,6 +79,11 @@ const router = new Router({
               path: 'step3',
               name: '会员认证',
               component: step3
+            },
+            {
+              path: 'step4',
+              name: '会员认证',
+              component: step4
             }
           ]
         }

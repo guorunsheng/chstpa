@@ -56,7 +56,9 @@
     </el-upload>
   </el-form-item>
     <el-form-item>
-    <el-button type="primary" @click="submitForm('ruleForm')" style="margin-left:20px;width:90px;height:40px;" class="sub">提交</el-button>
+    <el-button type="primary" @click="submitForm('ruleForm')" style="margin-left:20px;width:90px;height:40px;" class="sub">下一步</el-button>
+    <!-- <el-button type="primary" @click="down()" style="margin-left:20px;width:90px;height:40px;" class="sub">下载</el-button>
+    <a href="http://127.0.0.1:8888/uploadFiles/upload/member/郭润会员登记表.docx">下载</a> -->
   </el-form-item>
 <br/>
  </el-form>
@@ -132,13 +134,16 @@
                     //this.$emit('step',"1");
                     //console.log("step");
                     this.$parent.next();
-                    this.$router.push('step2')
+                    this.$router.push('step4')
                     
                 } else {
                     this.$message.error(res.err.desc);
                 }
             })
             alert('submit!');
+          },
+          down() {
+            this.httpFc('http://127.0.0.1:8888/member/WordExport')
           },
           httpFc(v) {
           return this.http
