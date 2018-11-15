@@ -140,7 +140,6 @@
                     this.$message.error(res.err.desc);
                 }
             })
-            alert('submit!');
           },
           down() {
             this.httpFc('http://127.0.0.1:8888/member/WordExport')

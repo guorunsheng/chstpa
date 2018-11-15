@@ -18,7 +18,7 @@ export default {
     }
   },
    created() {
-    this.$router.push('/member/step2')
+    this.$router.push('/member/step1')
   },
   methods: {
     next() {

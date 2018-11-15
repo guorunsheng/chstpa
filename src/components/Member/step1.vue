@@ -43,7 +43,7 @@
 
   </el-form-item>
   <el-form-item>
-    <el-button type="primary" @click="submitForm('ruleForm')" style="margin-left:20px;width:90px;height:40px; margin-bottom:20px;">立即创建</el-button>
+    <el-button type="primary" @click="submitForm('ruleForm')" style="margin-left:20px;width:90px;height:40px; margin-bottom:20px;">下一步</el-button>
     <el-button @click="resetForm('ruleForm')" style="width:90px;height:40px;">重置</el-button>
   </el-form-item>
  </el-form>
@@ -176,7 +176,6 @@
                     this.$message.error(res.err.desc);
                 }
             })
-            alert('submit!');
           } else {
             console.log('error submit!!');
             return false;

@@ -138,6 +138,7 @@ export default {
                 localStorage.setItem("USERNAME", res.data.userName);
                 localStorage.setItem("TOKEN", res.data.token);
                 localStorage.setItem("TIMEFIIL", res.data.time);
+                localStorage.setItem("state",res.data.state);
                 // 改变头信息
                 this.$emit("loginOK", res.data.userName);
                 this.dialogShow = false;
