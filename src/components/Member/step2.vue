@@ -1,5 +1,5 @@
 <template>
-<el-form ref="form" :model="form" label-width="80px" :inline="true" style="height:800px;width:900px;border-radius:25px;font-family:微软雅黑;border:1px solid #d9d9d9; " class="all">
+<el-form ref="form" :model="form" label-width="80px" :inline="true" style="width:900px;border-radius:25px;font-family:微软雅黑;border:1px solid #d9d9d9; " class="all">
    <div class="block" >
     <el-form-item label="学历时间" style="margin-top:35px;margin-left:58px;"><br/>
     <el-date-picker

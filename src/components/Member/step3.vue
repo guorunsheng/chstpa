@@ -1,62 +1,63 @@
 <template>
-<el-form :model="ruleForm"  label-width="300px" class="demo-ruleForm" >
-  <el-form-item label="身份证复印件正面" prop="idCardUrlZ">
+<el-form :model="ruleForm"  label-width="400px" class="demo-ruleForm" >
+  <el-form-item label="身份证复印件正面" prop="idCardUrlZ" style="margin-top:10px;margin-left:-200px;"><br/>
       <el-upload
     class="avatar-uploader"
     action="http://127.0.0.1:8888/member/uploadPhoto"
     :show-file-list="false"
     :on-success="FidCardUrlz"
-    :before-upload="beforeAvatarUpload"  style="margin-left:20px;">
+    :before-upload="beforeAvatarUpload"  style="margin-left:-125px;margin-top:0px;">
     <img v-if="ruleForm.idCardUrlZ" :src="ruleForm.idCardUrlZ" class="avatar" >
     <i v-else class="el-icon-plus avatar-uploader-icon"></i>
     </el-upload>
   </el-form-item>
-  <el-form-item label="身份证复印件反面" prop="idCardUrlF">
+  <el-form-item label="身份证复印件反面" prop="idCardUrlF" style="margin-top:-300px;margin-left:70px;"><br/>
     <el-upload
     class="avatar-uploader"
     action="http://127.0.0.1:8888/member/uploadPhoto"
     :show-file-list="false"
     :on-success="FidCardUrlf"
-    :before-upload="beforeAvatarUpload"  style="margin-left:20px;">
-    <img v-if="ruleForm.idCardUrlF" :src="ruleForm.idCardUrlF" class="avatar" >
+    :before-upload="beforeAvatarUpload"  style="">
+    <img v-if="ruleForm.idCardUrlF" :src="ruleForm.idCardUrlF" class="avatar" style="margin-top:10px;" >
     <i v-else class="el-icon-plus avatar-uploader-icon"></i>
     </el-upload>
   </el-form-item>
-  <el-form-item label="学历学位证书" prop="diplomaCertUrl">
+   <el-form-item label="学历学位证书" prop="diplomaCertUrl" style="margin-left:-225px;margin-top:-25px;"><br/>
     <el-upload
     class="avatar-uploader"
     action="http://127.0.0.1:8888/member/uploadPhoto"
     :show-file-list="false"
     :on-success="FdiplomaCertUrl"
-    :before-upload="beforeAvatarUpload"  style="margin-left:20px;">
+    :before-upload="beforeAvatarUpload"  style="margin-top:5px;margin-left:-100px;">
     <img v-if="ruleForm.diplomaCertUrl" :src="ruleForm.diplomaCertUrl" class="avatar" >
-    <i v-else class="el-icon-plus avatar-uploader-icon"></i>
+    <i v-else class="el-icon-plus avatar-uploader-icon" ></i>
     </el-upload>
   </el-form-item>
-  <el-form-item label="职称证书" prop="postCertUrl">
-    <el-upload
-    class="avatar-uploader"
-    action="http://127.0.0.1:8888/member/uploadPhoto"
-    :show-file-list="false"
-    :on-success="FpostCertUrl"
-    :before-upload="beforeAvatarUpload"  style="margin-left:20px;">
-    <img v-if="ruleForm.postCertUrl" :src="ruleForm.postCertUrl" class="avatar" >
-    <i v-else class="el-icon-plus avatar-uploader-icon"></i>
-    </el-upload>
-  </el-form-item>
-  <el-form-item label="其他" prop="otherCertUrl">
+
+   <el-form-item label="职称/职位证书" prop="postCertUrl" style="margin-top:-284px;" ><br/>
     <el-upload
     class="avatar-uploader"
     action="http://127.0.0.1:8888/member/uploadPhoto"
     :show-file-list="false"
     :on-success="FotherCertUrl"
-    :before-upload="beforeAvatarUpload"  style="margin-left:20px;">
+    :before-upload="beforeAvatarUpload"  style="margin-left:72px;margin-top:5px;">
+    <img v-if="ruleForm.postCertUrl" :src="ruleForm.postCertUrl" class="avatar" >
+    <i v-else class="el-icon-plus avatar-uploader-icon"></i>
+    </el-upload>
+  </el-form-item>
+  <el-form-item label="其他" prop="otherCertUrl" style="margin-left:-275px;margin-top:-25px;"><br/>
+    <el-upload
+    class="avatar-uploader"
+    action="http://127.0.0.1:8888/member/uploadPhoto"
+    :show-file-list="false"
+    :on-success="FotherCertUrl"
+    :before-upload="beforeAvatarUpload"  style="margin-left:-50px;margin-top:6px;">
     <img v-if="ruleForm.otherCertUrl" :src="ruleForm.otherCertUrl" class="avatar" >
     <i v-else class="el-icon-plus avatar-uploader-icon"></i>
     </el-upload>
   </el-form-item>
     <el-form-item>
-    <el-button type="primary" @click="submitForm('ruleForm')" style="margin-left:20px;width:90px;height:40px;" class="sub">下一步</el-button>
+    <el-button type="primary" @click="submitForm('ruleForm')" style="margin-left:-325px;width:90px;height:40px;" class="sub">下一步</el-button>
     <!-- <el-button type="primary" @click="down()" style="margin-left:20px;width:90px;height:40px;" class="sub">下载</el-button>
     <a href="http://127.0.0.1:8888/uploadFiles/upload/member/郭润会员登记表.docx">下载</a> -->
   </el-form-item>
@@ -154,8 +155,11 @@
 </script>
 <style>
   .demo-ruleForm{
-      width:800px;
-      background-color: red;
+      width:900px;
+      border-radius:25px;
+      font-family:微软雅黑;
+      margin: 0px auto;
+      border:1px solid #d9d9d9;
   }
   .avatar-uploader .el-upload {
     border: 1px dashed #d9d9d9;
@@ -170,16 +174,17 @@
   .avatar-uploader-icon {
     font-size: 28px;
     color: #8c939d;
-    width: 178px;
-    height: 178px;
+    width: 338px;
+    height: 200px;
     line-height: 178px;
     text-align: center;
   }
-  .avatar {
-    width: 178px;
+  /* .avatar {
+    width: 18px;
     height: 178px;
     display: block;
-  }
+    
+  } */
   .sub{
       margin-top: -50px;
   }

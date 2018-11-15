@@ -1,15 +1,53 @@
 <template>
-<el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="300px" class="demo-ruleForm">
-  <el-form-item label="姓名" prop="name" style="padding-top:30px;">
-    <el-input v-model="ruleForm.name" style="width: 30%;margin-left:20px;"></el-input>
+<el-form :model="ruleForm" :rules="rules" :inline="true" ref="ruleForm" label-width="300px" class="demo-ruleForm">
+  <el-form-item label="姓名" prop="name" style="padding-top:30px;margin-left:-45px"><br/>
+    <el-input v-model="ruleForm.name" style="width: 100%;margin-left:-50px;"></el-input>
   </el-form-item>
-  <el-form-item label="性别" prop="sex">
-    <el-select v-model="ruleForm.sex" placeholder="请选择姓别" style="width: 30%;margin-left:20px;">
+  <el-form-item label="籍贯" prop="nativePlace" style="margin-left:-300px;margin-top:30px;"><br/>
+    <el-input v-model="ruleForm.nativePlace" style="width: 100%;margin-left:-52px;"></el-input>
+  </el-form-item>
+  <el-form-item label="性别" prop="sex" style="margin-top:30px;margin-left:-310px"><br/>
+    <!-- <el-select v-model="ruleForm.sex" placeholder="请选择性别" style="width: 80%;margin-left:-40px;">
       <el-option label="男" value="0"></el-option>
       <el-option label="女" value="1"></el-option>
-    </el-select>
+    </el-select> -->
+    <el-radio v-model="radio" label="1" style="margin-left:-38px">男</el-radio>
+    <el-radio v-model="radio" label="2" style="margin-left:0px">女</el-radio>
   </el-form-item>
-  <el-form-item label="籍贯" prop="nativePlace">
+ <el-form-item label="职称/职务" prop="rankName" style="margin-left:-10px;margin-top:-10px;"><br/>
+    <el-input v-model="ruleForm.rankName" style="width: 130%;margin-left:-85px;"></el-input>
+  </el-form-item>
+  <el-form-item label="办公电话" prop="tel" style="margin-top:-102px;margin-left:150px;"><br/>
+    <el-input v-model="ruleForm.tel" style="width: 130%;margin-left:-80px;"></el-input>
+  </el-form-item>
+  <el-form-item label="手机号码" prop="phone" style="margin-top:-121px;margin-left:318px;"><br/>
+    <el-input v-model="ruleForm.phone" style="width: 130%;margin-left:-78px;"></el-input>
+  </el-form-item>
+  <el-form-item label="电子邮箱" prop="email" style="margin-top:-50px;margin-left:-15px;"><br/>
+    <el-input v-model="ruleForm.email" style="width: 120%;margin-left:-78px;"></el-input>
+  </el-form-item>
+  <el-form-item label="现居地址" prop="presentAdd" style="margin-top:-102px;margin-left:150px;"><br/>
+    <el-input v-model="ruleForm.presentAdd" style="width: 130%;margin-left:-80px;"></el-input>
+  </el-form-item>
+   <el-form-item label="其他社会事务" prop="presentAdd" style="margin-top:-120px;margin-left:345px;"><br/>
+    <el-input v-model="ruleForm.presentAdd" style="width: 160%;margin-left:-105px;"></el-input>
+  </el-form-item>
+  <el-form-item label="近期二寸照片" prop="reTwoInchPhoto" style="margin-top:-52px;margin-left:7px;"><br/>
+      <el-upload
+    class="avatar-uploader"
+    action="http://127.0.0.1:8888/member/uploadPhoto"
+    :show-file-list="false"
+    :on-success="handleAvatarSuccess"
+    :before-upload="beforeAvatarUpload"  style="margin-left:20px;margin-top:5px;margin-left:-98px;">
+    <img v-if="imageUrl" :src="imageUrl" class="avatar" >
+    <i v-else class="el-icon-plus avatar-uploader-icon"></i>
+    </el-upload>
+    <el-form-item>
+    <el-button type="primary" @click="submitForm('ruleForm')" style="margin-left:-98px;width:90px;height:38px; margin-top:10px;">立即创建</el-button>
+    <el-button @click="resetForm('ruleForm')" style="width:90px;height:40px;">重置</el-button>
+  </el-form-item> 
+  </el-form-item>
+  <!-- <el-form-item label="籍贯" prop="nativePlace">
     <el-input v-model="ruleForm.nativePlace" style="width: 30%;margin-left:20px;"></el-input>
   </el-form-item>
   <el-form-item label="职称/职务" prop="rankName">
@@ -45,7 +83,7 @@
   <el-form-item>
     <el-button type="primary" @click="submitForm('ruleForm')" style="margin-left:20px;width:90px;height:40px; margin-bottom:20px;">立即创建</el-button>
     <el-button @click="resetForm('ruleForm')" style="width:90px;height:40px;">重置</el-button>
-  </el-form-item>
+  </el-form-item> -->
  </el-form>
 </template>
 
@@ -54,6 +92,7 @@
   export default {
     data() {
       return {
+         radio: '1',
         imageUrl: '',
           ruleForm: {
           name: '',
@@ -78,7 +117,7 @@
           ],
           rankName: [
             { required: true, message: '请输入职称/职务', trigger: 'blur' },
-            { min: 2, max: 10, message: '长度在 2 到 10 个字符', trigger: 'blur' }
+            { min: 2, max: 20, message: '长度在 2 到 10 个字符', trigger: 'blur' }
           ],
           tel: [
             { required: true, message: '请输入电话', trigger: 'blur' },
@@ -198,7 +237,11 @@
   .demo-ruleForm{
     width: 900px;
     margin: 0px auto;
-    margin-top: -25px;
+    margin-top: 15px;
+    border-radius:25px;
+    font-family:微软雅黑;
+    border:1px solid #d9d9d9;
+    background-color:white;
   }
   .avatar-uploader .el-upload {
     border: 1px dashed #d9d9d9;
@@ -213,7 +256,7 @@
   .avatar-uploader-icon {
     font-size: 28px;
     color: #8c939d;
-    width: 178px;
+    width: 158px;
     height: 178px;
     line-height: 178px;
     text-align: center;
