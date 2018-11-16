@@ -7,8 +7,7 @@
     action="http://127.0.0.1:8888/member/uploadPhoto"
     :show-file-list="false"
     :on-success="Fsignature"
-    :before-upload="beforeAvatarUpload"  style="margin-left:-100px;margin-top:12px;   border: 1px dashed #d9d9d9;
-    border-radius: 6px;width:200px;height:260px;">
+    :before-upload="beforeAvatarUpload"  style="margin-left:-100px;margin-top:12px;   border: 1px dashed #d9d9d9;">
     <img v-if="ruleForm.signature" :src="ruleForm.signature" class="avatar" >
     <i v-else class="el-icon-plus avatar-uploader-icon"></i>
     </el-upload>
@@ -95,8 +94,8 @@
     text-align: center;
   }
   .avatar {
-    width: 200px;
-    height: 260px;
+    /* width: 200px;
+    height: 260px; */
     display: block;
   }
 </style>
