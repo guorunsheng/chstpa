@@ -1,57 +1,51 @@
 <template>
   <div class="bottom-info">
       <div class="select">
-          <span style="font-size:20px;font-weight:bold;margin-left:20px;padding-top:-15px;">友情链接</span>
+          <span style="font-size:20px;font-weight:bold;margin-left:10px;padding-top:-15px;">友情链接</span>
          <template>
-            <el-select v-model="value5" multiple collapse-tags
-                style="margin-left: 40px;margin-top:8px;" placeholder="请选择">
-                <el-option
+            <el-select v-model="value1" clearable placeholder="请选择" class="select">
+              <el-option
                 v-for="item in options"
                 :key="item.value"
                 :label="item.label"
                 :value="item.value">
-                </el-option>
+              </el-option>
             </el-select>
-               <el-select v-model="value5" multiple collapse-tags
-                style="margin-left: 10px;" placeholder="请选择">
-                <el-option
-                v-for="item in options"
+
+             <el-select v-model="value2" clearable placeholder="请选择" class="select">
+              <el-option
+                v-for="item in options1"
                 :key="item.value"
                 :label="item.label"
                 :value="item.value">
-                </el-option>
+              </el-option>
             </el-select>
-            <el-select
-                v-model="value11"
-                multiple
-                collapse-tags
-                style="margin-left: 10px;"
-                placeholder="请选择">
-                <el-option
+
+             <el-select v-model="value3" clearable placeholder="请选择" class="select">
+              <el-option
                 v-for="item in options"
                 :key="item.value"
                 :label="item.label"
                 :value="item.value">
-                </el-option>
+              </el-option>
             </el-select>
-               <el-select v-model="value5" multiple collapse-tags
-                style="margin-left: 10px;" placeholder="请选择">
-                <el-option
+
+             <el-select v-model="value4" clearable placeholder="请选择" class="select">
+              <el-option
                 v-for="item in options"
                 :key="item.value"
                 :label="item.label"
                 :value="item.value">
-                </el-option>
-            </el-select> 
+              </el-option>
+            </el-select>
         </template>
       </div>
   </div>
 </template>
 <script>
-// import bottomInfoData from "../../data/bottomInfo";
-export default {
+  export default {
     data() {
-       return {
+      return {
         options: [{
           value: '选项1',
           label: '黄金糕'
@@ -68,24 +62,35 @@ export default {
           value: '选项5',
           label: '北京烤鸭'
         }],
-        value5: [],
-        value11: []
+        options1: [{
+          value: '选项1',
+          label: '黄金糕哈哈'
+        }, {
+          value: '选项2',
+          label: '双皮奶'
+        }, {
+          value: '选项3',
+          label: '蚵仔煎'
+        }, {
+          value: '选项4',
+          label: '龙须面'
+        }, {
+          value: '选项5',
+          label: '北京烤鸭'
+        }],
+        value1: '',
+        value2:'',
+        value3:'',
+        value4:''
       }
-    },
-  components:{
-  },
-  created() {
-    //   this.infoData = bottomInfoData.bottomInfoDate;
-    //   console.log(bottomInfoData)
+    }
   }
-}
 </script>
 <style lang="scss" scoped>
-  
-      .select{
-            width: 100%;
-            height: 60px;
-            background-color:whitesmoke;
-        }
+  .select{
+    margin-left:10px;
+   
+  }
+    
 </style>
 
