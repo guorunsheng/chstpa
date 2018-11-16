@@ -18,7 +18,7 @@
     :show-file-list="false"
     :on-success="FidCardUrlf"
     :before-upload="beforeAvatarUpload"  style="">
-    <img v-if="ruleForm.idCardUrlF" :src="ruleForm.idCardUrlF" class="avatar" style="margin-top:10px;" >
+    <img v-if="ruleForm.idCardUrlF" :src="ruleForm.idCardUrlF" class="avatar" >
     <i v-else class="el-icon-plus avatar-uploader-icon"></i>
     </el-upload>
   </el-form-item>
@@ -178,12 +178,12 @@
     line-height: 178px;
     text-align: center;
   }
-  /* .avatar {
-    width: 18px;
-    height: 178px;
+  .avatar {
+    width: 340px;
+    height: 200px;
     display: block;
     
-  } */
+  }
   .sub{
       margin-top: -50px;
   }
