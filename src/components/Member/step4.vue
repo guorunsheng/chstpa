@@ -1,5 +1,5 @@
 <template>
-<el-form :model="ruleForm"  label-width="300px" class="demo-ruleForm" >
+<el-form :model="ruleForm"  label-width="300px" class="demo-ruleForm" style="height:500px;" ><br/>
   <span style="font-size:25px;margin-left:300px;">会员确认书</span>
   <el-form-item label="" prop="signature"  class="huiyuan" > 
       <el-upload
@@ -17,10 +17,10 @@
     <!-- <a:href="this.url"><el-button type="primary" @click="submitForm('ruleForm')" style="width:80px;height:40px;margin-top:-50px;margin-left:25px;" class="sub" >下载</el-button></a> -->
     <a :href="this.url"><input type="button" style="width:80px;height:40px;margin-left:0px;background-color:#409EFF;border:none;color:white;cursor:pointer" value="下载"></a>
      <!-- <el-button type="primary" @click="submitForm('ruleForm')" style="width:80px;height:40px;margin-top:-100px;margin-left:25px;" class="sub" >提交</el-button>  -->
-    <input type="button" style="width:80px;height:40px;margin-top:-100px;margin-left:25px;background-color:#409EFF;border:none;color:white;" value="提交">
+    <input type="button" @click="submitForm('ruleForm')" style="width:80px;height:40px;margin-top:-100px;margin-left:25px;background-color:#409EFF;border:none;color:white;cursor:pointer" value="提交">
   </el-form-item>
   <el-form-item label="1、您需要下载“会员确认书”打印并签字" style="margin-top:-260px;margin-left:540px;" ></el-form-item>
-  <el-form-item label="2、扫描后回传图片等待审核" style="margin-top:-30px;margin-left:474px;" ><br/>
+  <el-form-item label="2、扫描后回传图片等待审核" style="margin-top:-30px;margin-left:458px;" ><br/>
   </el-form-item>
  </el-form>
 </template>
@@ -44,9 +44,32 @@
             }else{
                 console.log(res)
             }
+        }),
+        this.httpFc('http://127.0.0.1:8888/member/AuthMember').then(res => {
+            if (+res.err.code === 200) {
+                this.ruleForm = res.data.member
+            }else{
+                console.log(res)
+            }
         })
     },
     methods: { 
+      submitForm(ruleForm) {
+          this.http
+          .post('http://127.0.0.1:8888/member/FirInfo', this.ruleForm)
+          .then(res => {
+              if (+res.err.code === 200) {
+                  //alert("200");
+                  //this.$emit('step',"1");
+                  //console.log("step");
+                  this.$parent.next();
+                  this.$router.push('/')
+                  
+              } else {
+                  this.$message.error(res.err.desc);
+              }
+          })
+        },
         beforeAvatarUpload(file) {
             const isJPG = file.type === 'image/jpeg';
             const isLt2M = file.size / 1024 / 1024 < 4;
