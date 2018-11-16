@@ -36,7 +36,7 @@ export default {
 <style lang="scss" scoped type="text/css">
   .all{
    width: 1100px;
-   height: 1300px;
+   //height: 1000px;
    margin: 0px auto;
    margin-top: 10px;
   }

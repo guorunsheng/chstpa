@@ -152,7 +152,7 @@
     }
   }
 </script>
-<style>
+<style scoped>
   .demo-ruleForm{
       width:900px;
       border-radius:25px;
