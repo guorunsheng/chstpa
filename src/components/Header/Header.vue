@@ -7,7 +7,13 @@
             <el-button class="search-btn" size='small' @click="loginFc(1)">登录</el-button>
         </div>
         <div class="person-info" v-if="username">
-          <p>{{username}} <span v-if="isAdmin" class="back-plam" @click="goIndex('/backPlatform')">[回到后台]</span> <span v-if="state===0" class="back-plam" @click="goIndex('/member')">[认证]</span> <span class="exit-btn" @click="exitFc">[退出]</span></p>
+          <p>{{username}} 
+            <span v-if="isAdmin" class="back-plam" @click="goIndex('/backPlatform')">[回到后台]</span> 
+            <span v-if="state===0" class="back-plam" @click="goIndex('/member/step1')">[认证]</span>
+            <span v-else-if="state===1" class="back-plam"><img src="../../assets/dhy.png" class="avatar" /></span>
+            <span v-else-if="state===2" class="back-plam"><img src="../../assets/hy.png" class="avatar" /></span>
+            <span class="exit-btn" @click="exitFc">[退出]</span>
+          </p>
         </div>
     </div>
     <div class="nav" v-if="this.$route.path === '/index'">
@@ -22,14 +28,14 @@
             </ul>
         </nav>
     </div>
-    <div v-if="routerName !== 'Index'" class="breadcrumb"><span @click="$router.push('/')" style="cursor: pointer;color: #000;">主页</span> > <span>{{routerName}}</span></div>
+    <!-- <div v-if="routerName !== 'Index'" class="breadcrumb"><span @click="$router.push('/')" style="cursor: pointer;color: #000;">主页</span> > <span>{{routerName}}</span></div> -->
     <!--面包屑繁琐，看情况再加-->
-    <!-- <el-breadcrumb class="breadcrumb" separator-class="el-icon-arrow-right" v-if="this.$route.path !== '/index' && this.$route.path !== '/YzmForm'">
+    <el-breadcrumb class="breadcrumb" separator-class="el-icon-arrow-right" v-if="this.$route.path !== '/index' && this.$route.path !== '/YzmForm'">
       <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-      <el-breadcrumb-item>活动管理</el-breadcrumb-item>
-      <el-breadcrumb-item>活动列表</el-breadcrumb-item>
-      <el-breadcrumb-item>活动详情</el-breadcrumb-item>
-    </el-breadcrumb> -->
+      <el-breadcrumb-item>{{routerName}}</el-breadcrumb-item>
+      <!-- <el-breadcrumb-item>活动列表</el-breadcrumb-item>
+      <el-breadcrumb-item>活动详情</el-breadcrumb-item> -->
+    </el-breadcrumb>
   </div>  
 </template>
 <script>

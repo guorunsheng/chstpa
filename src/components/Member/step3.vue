@@ -3,7 +3,7 @@
   <el-form-item label="身份证复印件正面" prop="idCardUrlZ" style="margin-top:10px;margin-left:-200px;"><br/>
       <el-upload
     class="avatar-uploader"
-    action="http://127.0.0.1:8888/member/uploadPhoto"
+    action="http://127.0.0.1:8888/member/uploadPhoto?name=idCardUrlZ"
     :show-file-list="false"
     :on-success="FidCardUrlz"
     :before-upload="beforeAvatarUpload"  style="margin-left:-125px;margin-top:0px;">
@@ -14,7 +14,7 @@
   <el-form-item label="身份证复印件反面" prop="idCardUrlF" style="margin-top:-300px;margin-left:70px;"><br/>
     <el-upload
     class="avatar-uploader"
-    action="http://127.0.0.1:8888/member/uploadPhoto"
+    action="http://127.0.0.1:8888/member/uploadPhoto?name=idCardUrlF"
     :show-file-list="false"
     :on-success="FidCardUrlf"
     :before-upload="beforeAvatarUpload"  style="">
@@ -25,7 +25,7 @@
    <el-form-item label="学历学位证书" prop="diplomaCertUrl" style="margin-left:-225px;margin-top:-25px;"><br/>
     <el-upload
     class="avatar-uploader"
-    action="http://127.0.0.1:8888/member/uploadPhoto"
+    action="http://127.0.0.1:8888/member/uploadPhoto?name=diplomaCertUrl"
     :show-file-list="false"
     :on-success="FdiplomaCertUrl"
     :before-upload="beforeAvatarUpload"  style="margin-top:5px;margin-left:-100px;">
@@ -37,7 +37,7 @@
    <el-form-item label="职称/职位证书" prop="postCertUrl" style="margin-top:-284px;" ><br/>
     <el-upload
     class="avatar-uploader"
-    action="http://127.0.0.1:8888/member/uploadPhoto"
+    action="http://127.0.0.1:8888/member/uploadPhoto?name=postCertUrl"
     :show-file-list="false"
     :on-success="FotherCertUrl"
     :before-upload="beforeAvatarUpload"  style="margin-left:72px;margin-top:5px;">
@@ -48,7 +48,7 @@
   <el-form-item label="其他" prop="otherCertUrl" style="margin-left:-275px;margin-top:-25px;"><br/>
     <el-upload
     class="avatar-uploader"
-    action="http://127.0.0.1:8888/member/uploadPhoto"
+    action="http://127.0.0.1:8888/member/uploadPhoto?name=otherCertUrl"
     :show-file-list="false"
     :on-success="FotherCertUrl"
     :before-upload="beforeAvatarUpload"  style="margin-left:-50px;margin-top:6px;">
@@ -68,30 +68,27 @@
 
 <script>
   export default {
+    name: 'step3',
+    props:["ruleForm"],
     data() {
       return {
-        // idCardUrlZ: '',
-        // idCardUrlF: '',
-        // diplomaCertUrl: '',
-        // postCertUrl: '',
-        // otherCertUrl: '',
-        ruleForm: {
-            idCardUrlZ: '',
-            idCardUrlF: '',
-            diplomaCertUrl: '',
-            postCertUrl: '',
-            otherCertUrl: ''
-        },
+        // ruleForm: {
+        //     idCardUrlZ: '',
+        //     idCardUrlF: '',
+        //     diplomaCertUrl: '',
+        //     postCertUrl: '',
+        //     otherCertUrl: ''
+        // },
       };
     },
     created() {
-        this.httpFc('http://127.0.0.1:8888/member/AuthMember').then(res => {
-            if (+res.err.code === 200) {
-                this.ruleForm = res.data.member
-            }else{
-                console.log(res)
-            }
-        })
+        // this.httpFc('http://127.0.0.1:8888/member/AuthMember').then(res => {
+        //     if (+res.err.code === 200) {
+        //         this.ruleForm = res.data.member
+        //     }else{
+        //         console.log(res)
+        //     }
+        // })
     },
     methods: {
       FidCardUrlz(res, file) {

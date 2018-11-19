@@ -2,17 +2,17 @@
 <el-form :model="ruleForm"  label-width="300px" class="demo-ruleForm" style="height:500px;" ><br/>
   <span style="font-size:25px;margin-left:300px;">会员确认书</span>
   <el-form-item label="" prop="signature"  class="huiyuan" > 
-      <el-upload
-    class="avatar-uploader"
-    action="http://127.0.0.1:8888/member/uploadPhoto"
-    :show-file-list="false"
-    :on-success="Fsignature"
-    :before-upload="beforeAvatarUpload"  style="margin-left:-100px;margin-top:12px;   border: 1px dashed #d9d9d9; width: 200px;
-    height: 280px;">
-    <img v-if="ruleForm.signature" :src="ruleForm.signature" class="avatar" >
-    <i v-else class="el-icon-plus avatar-uploader-icon"></i>
+    <el-upload
+      class="avatar-uploader"
+      action="http://127.0.0.1:8888/member/uploadPhoto?name=signature"
+      :show-file-list="false"
+      :on-success="Fsignature"
+      :before-upload="beforeAvatarUpload"  style="margin-left:-100px;margin-top:12px;   border: 1px dashed #d9d9d9; width: 200px;
+      height: 280px;">
+      <img v-if="ruleForm.signature" :src="ruleForm.signature" class="avatar" >
+      <i v-else class="el-icon-plus avatar-uploader-icon"></i>
     </el-upload>
-     </el-form-item>
+  </el-form-item>
    <el-form-item>
     <!-- <a:href="this.url"><el-button type="primary" @click="submitForm('ruleForm')" style="width:80px;height:40px;margin-top:-50px;margin-left:25px;" class="sub" >下载</el-button></a> -->
     <a :href="this.url"><input type="button" style="width:80px;height:40px;margin-left:0px;background-color:#409EFF;border:none;color:white;cursor:pointer" value="下载"></a>
@@ -28,30 +28,35 @@
 
 <script>
   export default {
+    name: 'step4',
+    props:["ruleForm"],
     data() {
       return {
           url: '',
-           ruleForm: {
-            signature: '',
-        },
+          // ruleForm: {
+          //   signature: '',
+          // },
       };
     },
     created() {
         this.httpFc('http://127.0.0.1:8888/member/WordExport').then(res => {
             if (+res.err.code === 200) {
                 this.url = res.data.url
-                console.log(this.url);
-            }else{
-                console.log(res)
-            }
-        }),
-        this.httpFc('http://127.0.0.1:8888/member/AuthMember').then(res => {
-            if (+res.err.code === 200) {
-                this.ruleForm = res.data.member
             }else{
                 console.log(res)
             }
         })
+      //   this.httpFc('http://127.0.0.1:8888/member/AuthMember').then(res => {
+      //       if (+res.err.code === 200) {
+      //         this.ruleForm.signature = res.data.member.signature;
+      //         console.log(res.data.member.signature)
+      //         console.log(this.ruleForm.signature)
+      //           this.ruleForm = res.data.member
+      //           console.log(this.ruleForm)
+      //       }else{
+      //           console.log(res)
+      //       }
+      // })
     },
     methods: { 
       submitForm(ruleForm) {
@@ -84,6 +89,7 @@
         }, 
         Fsignature(res, file) {
           this.ruleForm.signature = res.data.url;
+          console.log(this.ruleForm.signature)
         },
         httpFc(v) {
           return this.http

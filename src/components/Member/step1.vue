@@ -35,11 +35,11 @@
   <el-form-item label="近期二寸照片" prop="reTwoInchPhoto" style="margin-top:-52px;margin-left:7px;"><br/>
       <el-upload
     class="avatar-uploader"
-    action="http://127.0.0.1:8888/member/uploadPhoto"
+    action="http://127.0.0.1:8888/member/uploadPhoto?name=reTwoInchPhoto"
     :show-file-list="false"
     :on-success="handleAvatarSuccess"
     :before-upload="beforeAvatarUpload"  style="margin-left:20px;margin-top:5px;margin-left:-98px;">
-    <img v-if="imageUrl" :src="imageUrl" class="avatar" >
+    <img v-if="ruleForm.reTwoInchPhoto" :src="ruleForm.reTwoInchPhoto" class="avatar" >
     <i v-else class="el-icon-plus avatar-uploader-icon"></i>
     </el-upload>
     <el-form-item>
@@ -90,23 +90,25 @@
 
 <script>
   export default {
+    name: 'step1',
+    props:["ruleForm"],
     data() {
       return {
          radio: '1',
-        imageUrl: '',
-          ruleForm: {
-          name: '',
-          sex: '',
-          nativePlace: '',
-          rankName: '',
-          tel: '',
-          phone: '',
-          email: '',
-          presentAdd: '',
-          reTwoInchPhoto: '',
-          reTwoInchPhotoPath: '',
-          otherPost:''
-        },
+        //  imageUrl: '',
+        //   ruleForm: {
+        //   name: '',
+        //   sex: '',
+        //   nativePlace: '',
+        //   rankName: '',
+        //   tel: '',
+        //   phone: '',
+        //   email: '',
+        //   presentAdd: '',
+        //   reTwoInchPhoto: '',
+        //   reTwoInchPhotoPath: '',
+        //   otherPost:''
+        // },
         rules: {
           name: [
             { required: true, message: '请输入姓名', trigger: 'blur' },
@@ -139,23 +141,23 @@
         }
       };
     },
-      created() {
-        this.httpFc('http://127.0.0.1:8888/member/AuthMember').then(res => {
-            if (+res.err.code === 200) {
-                this.ruleForm = res.data.member
-                this.imageUrl = res.data.member.reTwoInchPhoto
-                console.log(this.imageUrl)
-            }else{
-                console.log(res)
-            }
-        })
-    },
+    //   created() {
+    //     this.httpFc('http://127.0.0.1:8888/member/AuthMember').then(res => {
+    //         if (+res.err.code === 200) {
+    //             this.ruleForm = res.data.member
+    //             this.imageUrl = res.data.member.reTwoInchPhoto
+    //             console.log(this.imageUrl)
+    //         }else{
+    //             console.log(res)
+    //         }
+    //     })
+    // },
     methods: {
         
       handleAvatarSuccess(res, file) {
         this.ruleForm.reTwoInchPhoto = res.data.url;
         this.ruleForm.reTwoInchPhotoPath = res.data.path;
-        this.imageUrl = URL.createObjectURL(file.raw);
+        this.comm.imageUrl = URL.createObjectURL(file.raw);
       },
       beforeAvatarUpload(file) {
         const isJPG = file.type === 'image/jpeg';
