@@ -1,9 +1,9 @@
 <template>
   <div class="bottom-info">
-      <div class="select">
+   
           <span style="font-size:20px;font-weight:bold;margin-left:10px;padding-top:-15px;">友情链接</span>
-         <template>
-            <el-select v-model="value1" clearable placeholder="请选择" class="select">
+         <template style="width:100%">
+            <el-select v-model="value1" clearable placeholder="请选择" class="select" >
               <el-option
                 v-for="item in options"
                 :key="item.value"
@@ -40,7 +40,7 @@
             </el-select>
         </template>
       </div>
-  </div>
+  
 </template>
 <script>
   export default {
@@ -89,8 +89,8 @@
 <style lang="scss" scoped>
   .select{
     margin-left:10px;
-   
   }
     
 </style>
+
 

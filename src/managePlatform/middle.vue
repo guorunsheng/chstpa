@@ -22,7 +22,7 @@
                     <i class="el-icon-upload2"></i>
                     <span slot="title">上传文档列表</span>
                 </el-menu-item>
-                <el-menu-item index="5" disabled>
+                <el-menu-item index="5" @click="jumpTo('verifyMemberQ')">
                     <i class="el-icon-menu"></i>
                     <span slot="title">会员审核</span>
                 </el-menu-item>

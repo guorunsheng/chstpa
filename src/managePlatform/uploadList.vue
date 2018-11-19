@@ -12,11 +12,10 @@
             :data="pagesData"
             stripe
             border
-            style="width: 100%">   
+            style="width: 100%;">   
             <el-table-column
             prop="title"
-            label="名称"
-            >
+            label="名称">
                 <template slot-scope="scope">
                     <span style="margin-left: 10px"><img :src="scope.row.icon" class="pre-cion">{{scope.row.title}}</span>
                 </template>
@@ -104,11 +103,9 @@ export default {
 <style scoped lang='scss'>
     .upload-list {
         padding-top: 20px;
-       // padding-top: 2em;
         .row-search {
-        margin-bottom: 10px;
+        margin-bottom: 14px;
         margin-top: -4px;
-        //    margin-bottom: 1em;
         }
         .pag {
             text-align: right;
