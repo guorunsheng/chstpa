@@ -2,7 +2,10 @@
   <div class="info-area">
      <h3>{{tit}}</h3>
      <ul class="tit-wrap">
-         <li v-for="item in pages" @click="clickPage(category, item.id)">- {{item.title}} <span class="news-date">{{item.date}}</span></li>
+         <li v-for="item in pages" @click="clickPage(category, item.id)">
+           {{item.title}} 
+           <span class="news-date">{{item.date}}</span>
+          </li>
      </ul>
      <div class="info-area-more" @click="clickPage(category)">更多 ></div>
   </div>  
