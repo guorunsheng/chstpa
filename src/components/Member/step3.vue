@@ -52,7 +52,7 @@
     :show-file-list="false"
     :on-success="FotherCertUrl"
     :before-upload="beforeAvatarUpload"  style="margin-left:-50px;margin-top:6px;">
-    <img v-if="ruleForm.otherCertUrl" :src="ruleForm.otherCertUrl" class="avatar" >
+    <img v-if="ruleForm.otherCertUrl" :src="ruleForm.otherCertUrl" class="avatar1" >
     <i v-else class="el-icon-plus avatar-uploader-icon"></i>
     </el-upload>
   </el-form-item>
@@ -178,6 +178,11 @@
   .avatar {
     width: 340px;
     height: 200px;
+    display: block;
+  }
+    .avatar1 {
+    width: 200px;
+    height: 280px;
     display: block;
     
   }
