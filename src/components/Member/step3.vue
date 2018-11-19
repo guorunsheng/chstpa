@@ -6,18 +6,20 @@
     action="http://127.0.0.1:8888/member/uploadPhoto?name=idCardUrlZ"
     :show-file-list="false"
     :on-success="FidCardUrlz"
-    :before-upload="beforeAvatarUpload"  style="margin-left:-125px;margin-top:0px;">
+    :before-upload="beforeAvatarUpload"  style="margin-left:-125px;margin-top:0px; border: 1px dashed #d9d9d9; width: 340px;
+    height: 200px;">
     <img v-if="ruleForm.idCardUrlZ" :src="ruleForm.idCardUrlZ" class="avatar" >
     <i v-else class="el-icon-plus avatar-uploader-icon"></i>
     </el-upload>
   </el-form-item>
-  <el-form-item label="身份证复印件反面" prop="idCardUrlF" style="margin-top:-300px;margin-left:70px;"><br/>
+  <el-form-item label="身份证复印件反面" prop="idCardUrlF" style="margin-top:-265px;margin-left:70px;"><br/>
     <el-upload
     class="avatar-uploader"
     action="http://127.0.0.1:8888/member/uploadPhoto?name=idCardUrlF"
     :show-file-list="false"
     :on-success="FidCardUrlf"
-    :before-upload="beforeAvatarUpload"  style="">
+    :before-upload="beforeAvatarUpload"  style=" border: 1px dashed #d9d9d9; width: 340px;
+    height: 200px;">
     <img v-if="ruleForm.idCardUrlF" :src="ruleForm.idCardUrlF" class="avatar" >
     <i v-else class="el-icon-plus avatar-uploader-icon"></i>
     </el-upload>
@@ -28,19 +30,21 @@
     action="http://127.0.0.1:8888/member/uploadPhoto?name=diplomaCertUrl"
     :show-file-list="false"
     :on-success="FdiplomaCertUrl"
-    :before-upload="beforeAvatarUpload"  style="margin-top:5px;margin-left:-100px;">
+    :before-upload="beforeAvatarUpload"  style="margin-top:0px;margin-left:-100px; border: 1px dashed #d9d9d9; width: 340px;
+    height: 200px;">
     <img v-if="ruleForm.diplomaCertUrl" :src="ruleForm.diplomaCertUrl" class="avatar" >
     <i v-else class="el-icon-plus avatar-uploader-icon" ></i>
     </el-upload>
   </el-form-item>
 
-   <el-form-item label="职称/职位证书" prop="postCertUrl" style="margin-top:-284px;" ><br/>
+   <el-form-item label="职称/职位证书" prop="postCertUrl" style="margin-top:-285px;" ><br/>
     <el-upload
     class="avatar-uploader"
     action="http://127.0.0.1:8888/member/uploadPhoto?name=postCertUrl"
     :show-file-list="false"
-    :on-success="FotherCertUrl"
-    :before-upload="beforeAvatarUpload"  style="margin-left:72px;margin-top:5px;">
+    :on-success="FpostCertUrl"
+    :before-upload="beforeAvatarUpload"  style="margin-left:72px;margin-top:20px; border: 1px dashed #d9d9d9; width: 340px;
+    height: 200px;">
     <img v-if="ruleForm.postCertUrl" :src="ruleForm.postCertUrl" class="avatar" >
     <i v-else class="el-icon-plus avatar-uploader-icon"></i>
     </el-upload>
@@ -51,8 +55,9 @@
     action="http://127.0.0.1:8888/member/uploadPhoto?name=otherCertUrl"
     :show-file-list="false"
     :on-success="FotherCertUrl"
-    :before-upload="beforeAvatarUpload"  style="margin-left:-50px;margin-top:6px;">
-    <img v-if="ruleForm.otherCertUrl" :src="ruleForm.otherCertUrl" class="avatar1" >
+    :before-upload="beforeAvatarUpload"  style="margin-left:-50px;margin-top:2px; border: 1px dashed #d9d9d9; width: 340px;
+    height: 200px;">
+    <img v-if="ruleForm.otherCertUrl" :src="ruleForm.otherCertUrl" class="avatar" >
     <i v-else class="el-icon-plus avatar-uploader-icon"></i>
     </el-upload>
   </el-form-item>
@@ -72,13 +77,7 @@
     props:["ruleForm"],
     data() {
       return {
-        // ruleForm: {
-        //     idCardUrlZ: '',
-        //     idCardUrlF: '',
-        //     diplomaCertUrl: '',
-        //     postCertUrl: '',
-        //     otherCertUrl: ''
-        // },
+
       };
     },
     created() {
@@ -90,24 +89,32 @@
         //     }
         // })
     },
+    computed:{
+
+    },
     methods: {
       FidCardUrlz(res, file) {
+          this.$set(this.ruleForm,'idCardUrlZ','res.data.url')
           this.ruleForm.idCardUrlZ = res.data.url;
           //this.idCardUrlZ = URL.createObjectURL(file.raw);
       },
       FidCardUrlf(res, file) {
+          this.$set(this.ruleForm,'idCardUrlF','res.data.url')
           this.ruleForm.idCardUrlF = res.data.url;
           //this.idCardUrlF = URL.createObjectURL(file.raw);
       },
       FdiplomaCertUrl(res, file) {
+          this.$set(this.ruleForm,'diplomaCertUrl','res.data.url')
           this.ruleForm.diplomaCertUrl = res.data.url;
           //this.diplomaCertUrl = URL.createObjectURL(file.raw);
       },
       FpostCertUrl(res, file) {
+          this.$set(this.ruleForm,'postCertUrl','res.data.url')
           this.ruleForm.postCertUrl = res.data.url;
           //this.postCertUrl = URL.createObjectURL(file.raw);
       },
       FotherCertUrl(res, file) {
+          this.$set(this.ruleForm,'otherCertUrl','res.data.url')
           this.ruleForm.otherCertUrl = res.data.url;
           //this.otherCertUrl = URL.createObjectURL(file.raw);
       },
@@ -179,12 +186,6 @@
     width: 340px;
     height: 200px;
     display: block;
-  }
-    .avatar1 {
-    width: 200px;
-    height: 280px;
-    display: block;
-    
   }
   .sub{
       margin-top: -50px;

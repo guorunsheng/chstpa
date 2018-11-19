@@ -7,7 +7,7 @@
       action="http://127.0.0.1:8888/member/uploadPhoto?name=signature"
       :show-file-list="false"
       :on-success="Fsignature"
-      :before-upload="beforeAvatarUpload"  style="margin-left:-100px;margin-top:12px;   border: 1px dashed #d9d9d9; width: 200px;
+      :before-upload="beforeAvatarUpload"  style="margin-left:-100px;margin-top:12px; border: 1px dashed #d9d9d9; width: 200px;
       height: 280px;">
       <img v-if="ruleForm.signature" :src="ruleForm.signature" class="avatar" >
       <i v-else class="el-icon-plus avatar-uploader-icon"></i>
@@ -20,7 +20,7 @@
     <input type="button" @click="submitForm('ruleForm')" style="width:80px;height:40px;margin-top:-100px;margin-left:25px;background-color:#409EFF;border:none;color:white;cursor:pointer" value="提交">
   </el-form-item>
   <el-form-item label="1、您需要下载“会员确认书”打印并签字" style="margin-top:-260px;margin-left:540px;" ></el-form-item>
-  <el-form-item label="2、扫描后回传图片等待审核" style="margin-top:-30px;margin-left:458px;" ><br/>
+  <el-form-item label="2、扫描后回传图片等待审核" style="margin-top:-30px;margin-left:475px;" ><br/>
   </el-form-item>
  </el-form>
 </template>
@@ -98,7 +98,7 @@
     }
   }
 </script>
-<style scoped>
+<style>
 .huiyuan{
   margin-left:100px;
   margin-top:10px;

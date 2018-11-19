@@ -157,7 +157,7 @@
       handleAvatarSuccess(res, file) {
         this.ruleForm.reTwoInchPhoto = res.data.url;
         this.ruleForm.reTwoInchPhotoPath = res.data.path;
-        this.comm.imageUrl = URL.createObjectURL(file.raw);
+        //this.ruleForm.reTwoInchPhoto = URL.createObjectURL(file.raw);
       },
       beforeAvatarUpload(file) {
         const isJPG = file.type === 'image/jpeg';

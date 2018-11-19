@@ -272,12 +272,12 @@
     },
     methods:{
       submitForm(ruleForm) {
-        this.ruleForm.eduTime1 = this.time1;
-        this.ruleForm.eduTime2 = this.time2;
-        this.ruleForm.eduTime3 = this.time3;
-        this.ruleForm.jobTime1 = this.time4;
-        this.ruleForm.jobTime2 = this.time5;
-        this.ruleForm.jobTime3 = this.time6;
+        // this.ruleForm.eduTime1 = this.time1;
+        // this.ruleForm.eduTime2 = this.time2;
+        // this.ruleForm.eduTime3 = this.time3;
+        // this.ruleForm.jobTime1 = this.time4;
+        // this.ruleForm.jobTime2 = this.time5;
+        // this.ruleForm.jobTime3 = this.time6;
         this.$refs[ruleForm].validate((valid) => {
           if (valid) {
             this.http
