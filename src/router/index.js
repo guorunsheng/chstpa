@@ -20,7 +20,7 @@ import pageList from '@/managePlatform/pageList'
 import uploadFile from '@/managePlatform/uploadFile'
 import uploadList from '@/managePlatform/uploadList'
 import verifyMemberQ from '@/managePlatform/verifyMemberQ'
-
+import memberList from '@/managePlatform/memberList'
 Vue.use(Router)
 
 const router = new Router({
@@ -115,10 +115,16 @@ const router = new Router({
           path: 'uploadList',
           name: '上传文件列表',
           component: uploadList
-        },{
+        },
+        {
           path: 'verifyMemberQ',
           name: '会员审核',
           component: verifyMemberQ
+        },
+        {
+          path: 'memberList',
+          name: '会员列表',
+          component: memberList
         }
       ]
     },

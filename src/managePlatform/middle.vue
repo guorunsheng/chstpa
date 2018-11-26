@@ -26,6 +26,10 @@
                     <i class="el-icon-menu"></i>
                     <span slot="title">会员审核</span>
                 </el-menu-item>
+                <el-menu-item index="6" @click="jumpTo('memberList')">
+                    <i class="el-icon-setting"></i>
+                    <span slot="title">会员列表</span>
+                </el-menu-item>
                 <el-menu-item index="6" disabled>
                     <i class="el-icon-setting"></i>
                     <span slot="title">更多</span>
