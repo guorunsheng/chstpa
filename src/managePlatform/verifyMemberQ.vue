@@ -30,7 +30,7 @@
             label="操作" style="width: 20%">
             <template slot-scope="scope">
                 <el-button @click="searchData(scope.row.userName)" type="text" size="small">
-                    <router-link to='/searchData' style="text-decoration:none;color:black">查看资料</router-link>
+                    <router-link :to="{ path:'/searchData', name:{idCard: 'scope.row.userName'}}" style="text-decoration:none;color:black">查看资料</router-link>
                 </el-button>
             </template>
             </el-table-column>

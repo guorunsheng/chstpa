@@ -139,9 +139,7 @@ const router = new Router({
     {
       path: '/searchData',
       name: '会员审核',
-      component: searchData,
-      //redirect: 'verify/searchData',
-    
+      component: searchData
     }
   ],
   mode: 'history'

@@ -6,20 +6,19 @@ import 'element-ui/lib/theme-chalk/index.css'
 import App from './App'
 import router from './router'
 import axios from 'axios'
-
 import VueDirectiveImagePreviewer from 'vue-directive-image-previewer'
 import 'vue-directive-image-previewer/dist/assets/style.css'
-Vue.use(VueDirectiveImagePreviewer,{
-  background:{color:'#000'},
-  animate:{
-    duration:600,
-    delay:500
+Vue.use(VueDirectiveImagePreviewer, {
+  background: {color: '#000'},
+  animate: {
+    duration: 600,
+    delay: 500
   },
-  loading:{
-    image:''
+  loading: {
+    image: ''
   },
-  cursor:'crosshair',
-  clickMethod:'doubleClick'
+  cursor: 'crosshair',
+  clickMethod: 'doubleClick'
 })
 Vue.use(ElementUI)
 Vue.config.productionTip = false
