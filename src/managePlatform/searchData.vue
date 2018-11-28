@@ -11,29 +11,26 @@
          </tr>
          <tr>
            <td><img v-image-preview style="width:340px;height:200px;margin-top:6px;" :src="this.table.idCardUrlZ" alt=""></td>
-           <td><img style="width:340px;height:200px;margin-left:48px;" :src="this.table.idCardUrlF" alt=""></td>
+           <td><img v-image-preview style="width:340px;height:200px;margin-left:48px;" :src="this.table.idCardUrlF" alt=""></td>
          </tr>
           <tr>
             <td><label style="margin-left:100px;">学历学位证书</label></td>
             <td><label style="margin-left:135px;">职称/职位证书</label></td>
          </tr>
          <tr>
-           <td><img style="width:340px;height:200px;margin-top:6px;" :src="this.table.diplomaCertUrl" alt=""></td>
-           <td><img style="width:340px;height:200px;margin-left:48px;" :src="this.table.postCertUrl" alt=""></td>
+           <td><img v-image-preview style="width:340px;height:200px;margin-top:6px;" :src="this.table.diplomaCertUrl" alt=""></td>
+           <td><img v-image-preview style="width:340px;height:200px;margin-left:48px;" :src="this.table.postCertUrl" alt=""></td>
          </tr>
            <tr style="margin-top:10px;">
             <td><label style="margin-left:80px;margin-top:10px;">其他</label></td>
             <td><label style="margin-left:-40px;">会员登记表</label></td>
          </tr>
          <tr>
-           <td><img style="width:200px;height:280px;margin-top:6px;"  :src="this.table.otherCertUrl"  alt=""></td>
-           <td><img style="width:200px;height:280px;margin-left:-90px;" :src="this.table.signature" alt=""></td>
-           <td> 
-             <img id="image" src="../assets/4.jpg" alt="Picture" style="width:100px;height:100px;margin-left:-50px;" @click="$imageViewer">
-              <!-- <div class="vueBox">
-                <img :class="{'active':isChoose}"  src="../assets/4.jpg" style="width: 150px" @click="$imageViewer">
-              </div> -->
-             </td>
+           <td><img v-image-preview style="width:200px;height:280px;margin-top:6px;"  :src="this.table.otherCertUrl"  alt=""></td>
+           <td><img v-image-preview style="width:200px;height:280px;margin-left:-90px;" :src="this.table.signature" alt=""></td>
+           <!-- <td> 
+             <img v-image-preview id="image" src="../assets/4.jpg" alt="Picture" style="width:100px;height:100px;margin-left:-50px;">
+           </td> -->
          </tr>
          <div>
          
