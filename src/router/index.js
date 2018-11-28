@@ -21,6 +21,9 @@ import uploadFile from '@/managePlatform/uploadFile'
 import uploadList from '@/managePlatform/uploadList'
 import verifyMemberQ from '@/managePlatform/verifyMemberQ'
 import memberList from '@/managePlatform/memberList'
+
+import searchData from '@/managePlatform/searchData'
+
 Vue.use(Router)
 
 const router = new Router({
@@ -132,6 +135,13 @@ const router = new Router({
       path: '*',
       name: 'nopage',
       component: NotFound
+    },
+    {
+      path: '/searchData',
+      name: '会员审核',
+      component: searchData,
+      //redirect: 'verify/searchData',
+    
     }
   ],
   mode: 'history'

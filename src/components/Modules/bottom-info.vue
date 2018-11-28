@@ -33,7 +33,6 @@ export default {
 </script>
 <style lang="scss" scoped>
     .bottom-info {
-        padding-top: 20px;
         border: solid 4px #f6f6f6;
         background-color: #fff;
         display: flex;
@@ -49,13 +48,14 @@ export default {
                 width: 60px;
                 height: 60px;
                 position: absolute;
-                left: 2em;
+                left: 4em;
             }
             p {
                 text-indent: 20%;
                 font-size: 13px;
                 color: rgb(102, 102, 102);
                 font-family: 微软雅黑;
+                margin-left: 40px;
             }
         }
     }

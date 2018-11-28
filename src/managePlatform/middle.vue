@@ -76,11 +76,10 @@ export default {
 
 <style lang='scss' scoped>
 .back-all-wrap {
-    //height: 100vh;
     width: 1000PX;
     background-color:white;
     margin: 0PX auto;
-    height: 180vh;
+    //height: 180vh;
     .tac {
         //height: 100%;
         height: 100%;
