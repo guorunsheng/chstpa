@@ -77,14 +77,15 @@ export default {
             nums: 0,
         }
     },
-    created() {
-        this.getAllPages(0)
+   created() {
+        this.getAllPages('', 0)
     },
     methods: {
-        getAllPages(num = 0) {
+        getAllPages(v, num = 0) {
            this.http
           .get('http://127.0.0.1:8888/member/memberList', {
               params: {
+                  name:v,
                   num: num
               }
           })
@@ -95,12 +96,12 @@ export default {
             }
           })
         },
-        searchPages(v) {
-            this.getAllPages(0)
+       searchPages(v) {
+            this.getAllPages(v, 0)
         },
         changePage(v) {
             let _this = this
-            this.getAllPages((+v-1))
+            this.getAllPages(_this.searchContent, (+v-1))
         },
     }
 }
