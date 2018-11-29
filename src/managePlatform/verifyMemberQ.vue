@@ -30,7 +30,9 @@
             label="操作" style="width: 20%">
             <template slot-scope="scope">
                 <el-button @click="searchData(scope.row.userName)" type="text" size="small">
-                    <router-link :to="{ path:'/searchData', name:{idCard: 'scope.row.userName'}}" style="text-decoration:none;color:black">查看资料</router-link>
+                    <router-link :to="{ path:'/searchData', query:{idCard: scope.row}}" style="text-decoration:none;color:black">
+                     <el-button type="primary">查看资料</el-button>
+                    </router-link>
                 </el-button>
             </template>
             </el-table-column>
@@ -79,7 +81,7 @@ export default {
           })
         },
         searchData(idCard) {
-            console.log(idCard)
+            //console.log(idCard)
 
             this.http
             .get('http://chstpa.chstpa.com/member/verifyMemberQD', {
@@ -91,7 +93,7 @@ export default {
               if (+res.err.code === 200) {
                   this.table = '';
                   this.table = res.data.member[0];
-                  console.log(this.table)
+                  //console.log(this.table)
             }
           })
             // console.log(id);

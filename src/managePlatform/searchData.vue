@@ -10,7 +10,7 @@
             <td><label style="margin-left:150px;">身份证复印件反面</label></td>
          </tr>
          <tr>
-           <td><img v-image-preview style="width:340px;height:200px;margin-top:6px;" :src="this.ruleForm.idCardUrlZ" alt=""></td>
+           <td><img v-image-preview  id = "idCardUrlZ"  style="width:340px;height:200px;margin-top:6px;" :src="this.ruleForm.idCardUrlZ"  alt=""></td>
            <td><img v-image-preview style="width:340px;height:200px;margin-left:48px;" :src="this.ruleForm.idCardUrlF" alt=""></td>
          </tr>
           <tr>
@@ -54,44 +54,62 @@ import Viewer from 'viewerjs';
   export default {
     data() {
       return {
-            ruleForm: [],
+            ruleForm: this.$route.query.idCard,
+            // idCard:this.$route.query.idCard.diplomaCertUrl,
+            // url:this.$route.query.idCard.diplomaCertUrl,
+            //url:"http://127.0.0.1:8888/uploadFiles/upload/member/bfbbc770-62d7-4816-addc-e3a90b77d87c.jpg"
       };
     },
+    beforeCreate(){
+
+    },
     created() {
-        console.log(this)
-          //   this.http
-          //   .get('http://chstpa.chstpa.com/member/verifyMemberQD', {
-          //       params: {
-          //           idCard: String(idCard),
-          //       }
-          // })
-          // .then(res => {
-          //     if (+res.err.code === 200) {
-          //         this.ruleForm = '';
-          //         this.ruleForm = res.data.member[0];
-          //         console.log(this.ruleForm)
-          //   }
-          // })
+        // console.log(this.idCard)
+        //     this.http
+        //     .get('http://127.0.0.1:8888/member/verifyMemberQD', {
+        //         params: {
+        //             idCard: this.idCard,
+        //         }
+        //   })
+        //   .then(res => {
+        //       if (+res.err.code === 200) {
+        //           this.ruleForm = '';
+        //           this.ruleForm = res.data.member[0];
+        //           //$("#idCardUrlZ").attr('src', this.ruleForm.idCardUrlZ);
+        //           //alert("123")
+        //           //console.log("123")
+        //           // var anElement = $("#idCardUrlZ");
+        //           // anElement.attr("v-image-preview");
+                  
+        //     }
+        //   })
+          
+    },
+    updated(){
+      // var ll = $(".idCardUrlZ td").html();
+      // alert(ll)
+      // var src = this.ruleForm.idCardUrlZ;
+
+      // $("#idCardUrlZ").replaceWith('<img v-image-preview  id = "idCardUrlZ" src="http://127.0.0.1:8888/uploadFiles/upload/member/bfbbc770-62d7-4816-addc-e3a90b77d87c.jpg" style="width:340px;height:200px;margin-top:6px;"   alt="">')
+      // console.log(this.ruleForm)
     },
     methods: {
         verify(state){
             this.http
             .get('http://192.168.1.101:8888/member/verifyMember', {
               params: {
-                  userName: String(this.table.userName),
+                  userName: String(this.ruleForm.userName),
                   state:state,
               }
             })
             .then(res => {
               if (+res.err.code === 200) {
                 alert("审核通过成功！");
-                this.dialogVisible=false;
-                this.$router.go(0);
+                this.$router.push("/backPlatform/verifyMemberQ");
             }
             if (+res.err.code === 201) {
                 alert("联系会员重传资料！");
-                this.dialogVisible=false;
-                this.$router.go(0);
+                this.$router.push("/backPlatform/verifyMemberQ");
             }
           })
         }

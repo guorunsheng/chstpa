@@ -43,6 +43,7 @@ export default {
             text-indent: 20%;
             flex: 1;
             padding-top: 4em;
+            margin-left: 100px;
             position: relative;
             .img-bot {
                 width: 60px;
