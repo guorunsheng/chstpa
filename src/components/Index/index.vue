@@ -19,9 +19,16 @@
     </div>
     <div>
       <carouselAbout></carouselAbout>
-    </div>
+   
     <div>
       <selectchoose></selectchoose>
+    </div> 
+    <div>
+      <bottom-info></bottom-info>
+    </div> 
+    <div>
+      <selectValue></selectValue>
+    </div> 
     </div>
   </div>
 </template>
@@ -33,6 +40,10 @@ import tabNews from "../Modules/tab-news";
 import infoArea from "../Modules/info-area";
 import carouselAbout from "../Modules/carousel-about";
 import selectchoose from "../Modules/selectchoose";
+// import selectValue from "../Modules/selectValue";
+import bottominfo from "../Modules/bottom-info";
+
+
 export default {
   components: {
     carousel,
@@ -42,6 +53,7 @@ export default {
     infoArea,
     carouselAbout,
     selectchoose,
+    // selectValue
   },
   methods: {
     loginToast(v) {

@@ -28,26 +28,20 @@
                 </template>
             </el-table-column>
             <el-table-column
-            prop="downloadAdd"
-            label="使用链接">
-
+            label="使用链接"
+            prop="downloadAdd">
+               <template slot-scope="scope">
+                    <span style="margin-left: 10px"> {{scope.row.downloadAdd}}</span>
+                </template>
             </el-table-column>
             <el-table-column
             prop="oper"
             label="操作" style="width: 20%">
             <template slot-scope="scope">
                 <el-button @click="delPage(scope.row.id)" type="primary" size="small">删除</el-button>
-                <!-- <el-button type="primary" size="small"
-                 v-clipboard:copy="message"
-                 v-clipboard:success="onCopy"
-                 v-clipboard:error="onError"
-                >复制</el-button> -->
-                <input type="text" v-model="message">
-                <button type="button"
-                  v-clipboard:copy="message"
-                 v-clipboard:success="onCopy"
-                 v-clipboard:error="onError"
-                >复制</button>
+                <el-button type="primary" size="small"
+                 v-clipboard:copy=scope.row.downloadAdd
+                 v-clipboard:success="onCopy">复制</el-button>
             </template>
             </el-table-column>
         </el-table>
@@ -66,7 +60,6 @@ import Viewer from 'viewerjs';
 export default {
     data() {
         return {
-            message:'复制这条',
             pagesData: [],
             searchContent: '',
             initNum: 0,
@@ -79,7 +72,7 @@ export default {
     methods: {
         getAllPages(v, num = 0) {
            this.http
-          .get('http://127.0.0.1:8888/upload/getDownload', {
+          .get('http://chstpa.chstpa.com/upload/getDownload', {
               params: {
                   state: 3,
                   content: String(v),
@@ -119,7 +112,7 @@ export default {
             this.$router.push({ path: 'publishPage', query: {id: id }});
         },
         onCopy:function(e){
-          alert('you just copy'+e.text)
+          alert('复制成功')
         },
         onError:function(e){
              alert('Failed copy')
