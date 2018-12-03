@@ -34,6 +34,7 @@ export default {
       this.http
       .get('http://chstpa.chstpa.com/upload/getDownload', {
           params: {
+              state:1,
               num: this.initNum
           }
       })

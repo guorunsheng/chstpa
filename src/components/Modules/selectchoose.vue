@@ -1,34 +1,88 @@
 <template>
     <div class="oper-col">
-      <div style="width:1300px;height:200px;margin:0px auto;">
-        <ul style="">
-          <li style="font-size:16px;margin-left:100px;">协会介绍</li> <li style="margin-left:100px;">管理制度</li> <li style="margin-left:100px;">协会领导</li> <li style="margin-left:100px;">职能部门</li> <li style="margin-left:100px;">工作委员会</li> <li style="margin-left:100px;">自律维权</li><li  style="margin-left:100px;">联系我们</li>
-        </ul>
-        <ul>
-          <li style="font-size:16px;margin-left:-2px;">党建工作</li> <li>党建动态</li> <li>党章党规</li> <li>系列讲话</li></ul>
-        <ul>
-          <li style="font-size:16px;margin-left:-2px;">组织建设</li> <li>通知公告</li> <li>工作动态</li> <li>专业委员会</li> <li>管理制度</li> 
-        </ul>
-        <ul>
-          <li style="font-size:16px;margin-left:-2px;">继续教育</li> <li>通知公告</li> <li>工作动态</li> <li>技术推广</li> <li>健康教育</li> <li>网上学习</li>
-        </ul>
-        <ul>
-          <li style="font-size:16px;margin-left:-2px;">学术会议</li> <li>会议动态</li> <li>行业交流</li> <li>国际交流</li>
-        </ul>
-        <ul>
-          <li style="font-size:16px;margin-left:-2px;">公益慈善</li> <li>公益活动</li> <li>科普宣传</li> <li>生命银行</li> 
-        </ul>
-        <ul>
-          <li style="font-size:16px;margin-left:-2px;">科研转化</li> <li>科研成果</li> <li>孵化基金</li> 
-        </ul>
-        <ul>
-          <li style="font-size:16px;margin-left:-2px;">会员专区</li> <li>入会申请</li> <li>会员单位</li> <li>理事单位</li> <li>会员登录</li> <li>网上申报</li>
-        </ul>
-        <ul>
-          <li style="font-size:16px;margin-left:-2px;">下载专区</li> <li>入会资料</li> <li>培训资料</li> <li>数据中心</li> <li>协会刊物</li> <li>视频专区</li><li>其他资料</li>
+         <div class="oper-col-item" style="margin-left:40px;">
+           <ul style="">
+            <li style="font-size:16px;">协会介绍</li> 
+            <li><a href="#">管理制度</a></li> 
+            <li><a href="#">协会领导</a></li> 
+            <li><a href="#">职能部门</a></li> 
+            <li><a href="#">工作委员会</a></li> 
+            <li><a href="#">自律维权</a></li>
+            <li><a href="#">联系我们</a></li>
+          </ul>
+        </div>
+        <div class="oper-col-item">
+          <ul style="">
+            <li style="font-size:16px;">党建工作</li>
+            <li><a href="#">党建动态</a></li> 
+            <li><a href="#">党章党规</a></li> 
+            <li><a href="#">系列讲话</a></li> 
+          </ul>
+        </div>
+        <div class="oper-col-item">
+          <ul style="">
+            <li style="font-size:16px;">组织建设</li>
+            <li><a href="#">通知公告</a></li> 
+            <li><a href="#">工作动态</a></li> 
+            <li><a href="#">专业委员会</a></li> 
+            <li><a href="#">管理制度</a></li> 
+          </ul>
+        </div>
+        <div class="oper-col-item">
+          <ul style="">
+            <li style="font-size:16px;">继续教育</li>
+            <li><a href="#">通知公告</a></li> 
+            <li><a href="#">工作动态</a></li> 
+            <li><a href="#">技术推广</a></li> 
+            <li><a href="#">健康教育</a></li> 
+            <li><a href="#">网上学习</a></li>
+          </ul>
+        </div>
+        <div class="oper-col-item">
+          <ul>
+           <li style="font-size:16px;">学术会议</li> 
+           <li><a href="#">会议动态</a></li> 
+           <li><a href="#">行业交流</a></li>
+           <li><a href="#">国际交流</a></li>
+          </ul>
+        </div>
+        <div class="oper-col-item">
+          <ul>
+            <li style="font-size:16px;">公益慈善</li>
+            <li><a href="#">公益活动</a></li> 
+            <li><a href="#">科普宣传</a></li>
+            <li><a href="#">生命银行</a></li> 
         </ul>
         </div>
-    </div>
+        <div class="oper-col-item">
+          <ul>
+           <li style="font-size:16px;">科研转化</li>
+           <li><a href="#">科研成果</a></li> 
+           <li><a href="#">孵化基金</a></li> 
+          </ul>
+        </div>
+        <div class="oper-col-item">
+          <ul>
+            <li style="font-size:16px;">会员专区</li> 
+            <li><a href="#">入会申请</a></li> 
+            <li><a href="#">会员单位</a></li>
+            <li><a href="#">理事单位</a></li> 
+            <li><a href="#">会员登录</a></li> 
+            <li><a href="#">网上申报</a></li>
+          </ul>
+        </div>
+        <div class="oper-col-item" @click="jumpTo('downLoad')">
+          <ul>
+            <li style="font-size:16px;">下载专区</li> 
+            <li><a href="#">入会资料</a></li> 
+            <li><a href="#">培训资料</a></li> 
+            <li><a href="#">数据中心</a></li> 
+            <li><a href="#">协会刊物</a></li>
+            <li><a href="#">视频专区</a></li>
+            <li><a href="#">其他资料</a></li>
+          </ul>
+        </div>
+        </div>
 </template>
 <script>
   export default {
@@ -40,21 +94,31 @@
   }
 </script>
 <style lang="scss" scoped>
-.oper-col {
- height: 220px;
- width: 100%;
- border-top: 4px solid rgb(187, 184, 184);
-text-align:center;
+    .oper-col {
+     height:190px; 
+position: relative;
+    border-top: 2px solid #f6f6f6;
+    text-align:center;
+   margin-top: 8px;
+    .oper-col-item {
+      float: left;
+        text-align: center;
+        width: 10%;
+    ul li {
+        color: black;
+        font-size: 12px;
+        padding-top: 5px;
+         list-style: none;
+      margin-left: -20px;
+      font-family: "微软雅黑";
+    }
+    a{
+      text-decoration: none;
+      color: black;
+    }
+    a:hover{
+      color: red;
+    }
 }
-.oper-col ul{
-  float: left;
-  margin-left: 14px;
-   margin-top: 20px;
-   display:inline-block 
-}
-ul li{
-  list-style: none;
-  margin-top: 8px;
-  font-size:12px;
 }
 </style>

@@ -18,19 +18,27 @@
                     <i class="el-icon-upload2"></i>
                     <span slot="title">上传文档</span>
                 </el-menu-item>
-                <el-menu-item index="4" @click="jumpTo('uploadList')">
+                <el-menu-item index="4" @click="jumpTo('uploadRes')">
+                    <i class="el-icon-upload2"></i>
+                    <span slot="title">上传资源</span>
+                </el-menu-item>
+                <el-menu-item index="5" @click="jumpTo('uploadResList')">
+                    <i class="el-icon-upload2"></i>
+                    <span slot="title">上传资源列表</span>
+                </el-menu-item>
+                <el-menu-item index="6" @click="jumpTo('uploadList')">
                     <i class="el-icon-upload2"></i>
                     <span slot="title">上传文档列表</span>
                 </el-menu-item>
-                <el-menu-item index="5" @click="jumpTo('verifyMemberQ')">
+                <el-menu-item index="7" @click="jumpTo('verifyMemberQ')">
                     <i class="el-icon-menu"></i>
                     <span slot="title">会员审核</span>
                 </el-menu-item>
-                <el-menu-item index="6" @click="jumpTo('memberList')">
+                <el-menu-item index="8" @click="jumpTo('memberList')">
                     <i class="el-icon-setting"></i>
                     <span slot="title">会员列表</span>
                 </el-menu-item>
-                <el-menu-item index="6" disabled>
+                <el-menu-item index="9" disabled>
                     <i class="el-icon-setting"></i>
                     <span slot="title">更多</span>
                 </el-menu-item>

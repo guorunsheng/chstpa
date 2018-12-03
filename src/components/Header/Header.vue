@@ -10,8 +10,8 @@
           <p>{{username}} 
             <span v-if="isAdmin" class="back-plam" @click="goIndex('/backPlatform')">[回到后台]</span> 
             <span v-if="state===0" class="back-plam" @click="goIndex('/member/step1')">[认证]</span>
-            <span v-else-if="state===1" class="back-plam"><img src="../../assets/dhy.png" class="avatar" /></span>
-            <span v-else-if="state===2" class="back-plam"><img src="../../assets/hy.png" class="avatar" /></span>
+            <span v-else-if="state===1" class="back-plam"><img src="../../assets/dhy.png" /></span>
+            <span v-else-if="state===2" class="back-plam"><img src="../../assets/hy.png" /></span>
             <span class="exit-btn" @click="exitFc">[退出]</span>
           </p>
         </div>

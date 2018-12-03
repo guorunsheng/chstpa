@@ -3,7 +3,7 @@
   <el-form-item label="身份证复印件正面" prop="idCardUrlZ" style="margin-top:10px;margin-left:-200px;"><br/>
       <el-upload
     class="avatar-uploader"
-    action="http://127.0.0.1:8888/member/uploadPhoto?name=idCardUrlZ"
+    action="http://chstpa.chstpa.com/member/uploadPhoto?name=idCardUrlZ"
     :show-file-list="false"
     :on-success="FidCardUrlz"
     :before-upload="beforeAvatarUpload"  style="margin-left:-125px;margin-top:0px; border: 1px dashed #d9d9d9; width: 340px;
@@ -15,7 +15,7 @@
   <el-form-item label="身份证复印件反面" prop="idCardUrlF" style="margin-top:-265px;margin-left:70px;"><br/>
     <el-upload
     class="avatar-uploader"
-    action="http://127.0.0.1:8888/member/uploadPhoto?name=idCardUrlF"
+    action="http://chstpa.chstpa.com/member/uploadPhoto?name=idCardUrlF"
     :show-file-list="false"
     :on-success="FidCardUrlf"
     :before-upload="beforeAvatarUpload"  style=" border: 1px dashed #d9d9d9; width: 340px;
@@ -27,7 +27,7 @@
    <el-form-item label="学历学位证书" prop="diplomaCertUrl" style="margin-left:-225px;margin-top:-25px;"><br/>
     <el-upload
     class="avatar-uploader"
-    action="http://127.0.0.1:8888/member/uploadPhoto?name=diplomaCertUrl"
+    action="http://chstpa.chstpa.com/member/uploadPhoto?name=diplomaCertUrl"
     :show-file-list="false"
     :on-success="FdiplomaCertUrl"
     :before-upload="beforeAvatarUpload"  style="margin-top:0px;margin-left:-100px; border: 1px dashed #d9d9d9; width: 340px;
@@ -40,7 +40,7 @@
    <el-form-item label="职称/职位证书" prop="postCertUrl" style="margin-top:-285px;" ><br/>
     <el-upload
     class="avatar-uploader"
-    action="http://127.0.0.1:8888/member/uploadPhoto?name=postCertUrl"
+    action="http://chstpa.chstpa.com/member/uploadPhoto?name=postCertUrl"
     :show-file-list="false"
     :on-success="FpostCertUrl"
     :before-upload="beforeAvatarUpload"  style="margin-left:72px;margin-top:20px; border: 1px dashed #d9d9d9; width: 340px;
@@ -52,7 +52,7 @@
   <el-form-item label="其他" prop="otherCertUrl" style="margin-left:-275px;margin-top:-25px;"><br/>
     <el-upload
     class="avatar-uploader"
-    action="http://127.0.0.1:8888/member/uploadPhoto?name=otherCertUrl"
+    action="http://chstpa.chstpa.com/member/uploadPhoto?name=otherCertUrl"
     :show-file-list="false"
     :on-success="FotherCertUrl"
     :before-upload="beforeAvatarUpload"  style="margin-left:-50px;margin-top:2px; border: 1px dashed #d9d9d9; width: 340px;
@@ -132,7 +132,7 @@
       },
       submitForm(ruleForm) {
             this.http
-            .post('http://127.0.0.1:8888/member/FirInfo', this.ruleForm)
+            .post('http://chstpa.chstpa.com/member/FirInfo', this.ruleForm)
             .then(res => {
                 if (+res.err.code === 200) {
                     //alert("200");
@@ -147,7 +147,7 @@
             })
           },
           down() {
-            this.httpFc('http://127.0.0.1:8888/member/WordExport')
+            this.httpFc('http://chstpa.chstpa.com/member/WordExport')
           },
           httpFc(v) {
           return this.http

@@ -4,7 +4,7 @@
   <el-form-item label="" prop="signature"  class="huiyuan" > 
     <el-upload
       class="avatar-uploader"
-      action="http://127.0.0.1:8888/member/uploadPhoto?name=signature"
+      action="http://chstpa.chstpa.com/member/uploadPhoto?name=signature"
       :show-file-list="false"
       :on-success="Fsignature"
       :before-upload="beforeAvatarUpload"  style="margin-left:-100px;margin-top:12px; border: 1px dashed #d9d9d9; width: 200px;
@@ -13,6 +13,7 @@
       <i v-else class="el-icon-plus avatar-uploader-icon"></i>
     </el-upload>
   </el-form-item>
+    <el-input v-show="" v-model="ruleForm.state" style="width: 130%;margin-left:-85px;"></el-input>
    <el-form-item>
     <!-- <a:href="this.url"><el-button type="primary" @click="submitForm('ruleForm')" style="width:80px;height:40px;margin-top:-50px;margin-left:25px;" class="sub" >下载</el-button></a> -->
     <a :href="this.url"><input type="button" style="width:80px;height:40px;margin-left:0px;background-color:#409EFF;border:none;color:white;cursor:pointer" value="下载"></a>
@@ -39,7 +40,7 @@
       };
     },
     created() {
-        this.httpFc('http://127.0.0.1:8888/member/WordExport').then(res => {
+        this.httpFc('http://chstpa.chstpa.com/member/WordExport').then(res => {
             if (+res.err.code === 200) {
                 this.url = res.data.url
             }else{
@@ -61,7 +62,7 @@
     methods: { 
       submitForm(ruleForm) {
           this.http
-          .post('http://127.0.0.1:8888/member/FirInfo', this.ruleForm)
+          .post('http://chstpa.chstpa.com/member/FirInfo?names=signature', this.ruleForm)
           .then(res => {
               if (+res.err.code === 200) {
                   //alert("200");

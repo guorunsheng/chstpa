@@ -8,6 +8,9 @@ import router from './router'
 import axios from 'axios'
 import VueDirectiveImagePreviewer from 'vue-directive-image-previewer'
 import 'vue-directive-image-previewer/dist/assets/style.css'
+
+import VueClipboard from 'vue-clipboard2'
+Vue.use(VueClipboard)
 Vue.use(VueDirectiveImagePreviewer, {
   background: {color: '#000'},
   animate: {

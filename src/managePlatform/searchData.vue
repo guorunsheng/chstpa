@@ -61,7 +61,6 @@ import Viewer from 'viewerjs';
       };
     },
     beforeCreate(){
-
     },
     created() {
         // console.log(this.idCard)
@@ -96,7 +95,7 @@ import Viewer from 'viewerjs';
     methods: {
         verify(state){
             this.http
-            .get('http://192.168.1.101:8888/member/verifyMember', {
+            .get('http://chstpa.chstpa.com/member/verifyMember', {
               params: {
                   userName: String(this.ruleForm.userName),
                   state:state,

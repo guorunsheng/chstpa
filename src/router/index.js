@@ -19,6 +19,8 @@ import publishPage from '@/managePlatform/publishPage'
 import pageList from '@/managePlatform/pageList'
 import uploadFile from '@/managePlatform/uploadFile'
 import uploadList from '@/managePlatform/uploadList'
+import uploadRes from '@/managePlatform/uploadRes'
+import uploadResList from '@/managePlatform/uploadResList'
 import verifyMemberQ from '@/managePlatform/verifyMemberQ'
 import memberList from '@/managePlatform/memberList'
 
@@ -115,6 +117,16 @@ const router = new Router({
           component: uploadFile
         },
         {
+          path: 'uploadRes',
+          name: '上传资源',
+          component: uploadRes
+        },
+        {
+          path: 'uploadResList',
+          name: '上传资源列表',
+          component: uploadResList
+        },
+        {
           path: 'uploadList',
           name: '上传文件列表',
           component: uploadList
@@ -141,8 +153,8 @@ const router = new Router({
       name: '会员审核',
       component: searchData
     }
-  ],
-  mode: 'history'
+  ]
+  // mode: 'history'
 })
 
 export default router

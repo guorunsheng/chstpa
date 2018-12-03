@@ -83,7 +83,7 @@ export default {
     methods: {
         getAllPages(v, num = 0) {
            this.http
-          .get('http://127.0.0.1:8888/member/memberList', {
+          .get('http://chstpa.chstpa.com/member/memberList', {
               params: {
                   name:v,
                   num: num
