@@ -19,7 +19,7 @@
            <li><img src="../../assets/bottom.jpg" class="img-bot" style="width:50px;height:50px;"></li>
           </ul>
          <ul>
-           <li style="">网址：<a href="http://www.chstpa.com">www.chstpa.com</a></li>
+           <li style="">网址：<a href="https://www.chstpa.com">www.chstpa.com</a></li>
            <li>备案号：京ICP备18045235号-1</li> 
            <li>地址：北京市朝阳区东三环北路甲2号京信大厦1334室</li>
          </ul>

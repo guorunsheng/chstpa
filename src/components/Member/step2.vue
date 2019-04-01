@@ -281,7 +281,7 @@
         this.$refs[ruleForm].validate((valid) => {
           if (valid) {
             this.http
-            .post('http://chstpa.chstpa.com/member/FirInfo', this.ruleForm)
+            .post('https://chstpa.chstpa.com/member/FirInfo', this.ruleForm)
             .then(res => {
                 if (+res.err.code === 200) {
                     //alert("200");

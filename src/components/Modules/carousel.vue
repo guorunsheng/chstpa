@@ -21,7 +21,7 @@ export default {
   methods: {
       getDate() {
         this.http
-          .get("http://chstpa.chstpa.com/slideShow")
+          .get("https://chstpa.chstpa.com/slideShow")
           .then(res => {
             if (+res.err.code === 200) {
               this.imgArr = res.data.carouselData

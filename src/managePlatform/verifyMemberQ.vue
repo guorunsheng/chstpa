@@ -67,7 +67,7 @@ export default {
     methods: {
         getAllPages(v, num = 0) {
            this.http
-          .get('http://chstpa.chstpa.com/member/verifyMemberQ', {
+          .get('https://chstpa.chstpa.com/member/verifyMemberQ', {
               params: {
                   name: String(v),
                   num: num
@@ -84,7 +84,7 @@ export default {
             //console.log(idCard)
 
             this.http
-            .get('http://chstpa.chstpa.com/member/verifyMemberQD', {
+            .get('https://chstpa.chstpa.com/member/verifyMemberQD', {
                 params: {
                     idCard: String(idCard),
                 }
@@ -113,7 +113,7 @@ export default {
         },
         verify(state){
             this.http
-            .get('http://chstpa.chstpa.com/member/verifyMember', {
+            .get('https://chstpa.chstpa.com/member/verifyMember', {
               params: {
                   userName: String(this.table.userName),
                   state:state,

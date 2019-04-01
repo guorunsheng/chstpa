@@ -72,7 +72,7 @@ export default {
     methods: {
         getAllPages(v, num = 0) {
            this.http
-          .get('http://chstpa.chstpa.com/upload/getDownload', {
+          .get('https://chstpa.chstpa.com/upload/getDownload', {
               params: {
                   state: 3,
                   content: String(v),
@@ -89,7 +89,7 @@ export default {
         delPage(id) {
             let _this = this
             this.http
-            .get('http://chstpa.chstpa.com/upload/deleteDownload', {
+            .get('https://chstpa.chstpa.com/upload/deleteDownload', {
                 params: {
                     id
                 }

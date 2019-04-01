@@ -55,7 +55,7 @@ export default {
     };
   },
   created() {
-    this.getData("http://chstpa.chstpa.com/navInfo/navList");
+    this.getData("https://chstpa.chstpa.com/navInfo/navList");
     this.judge();
     this.isAdmin = +localStorage.getItem('isAdmin')
     this.state = +localStorage.getItem('state')
@@ -106,7 +106,7 @@ export default {
     },
     exitFc() {
       this.http
-        .post("http://chstpa.chstpa.com/logout", {
+        .post("https://chstpa.chstpa.com/logout", {
           token: localStorage.getItem("TOKEN")
         })
         .then(res => {

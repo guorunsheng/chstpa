@@ -40,7 +40,7 @@
    <el-form-item label="职称/职位证书" prop="postCertUrl" style="margin-top:-285px;" ><br/>
     <el-upload
     class="avatar-uploader"
-    action="http://chstpa.chstpa.com/member/uploadPhoto?name=postCertUrl"
+    action="https://chstpa.chstpa.com/member/uploadPhoto?name=postCertUrl"
     :show-file-list="false"
     :on-success="FpostCertUrl"
     :before-upload="beforeAvatarUpload"  style="margin-left:72px;margin-top:20px; border: 1px dashed #d9d9d9; width: 340px;
@@ -52,7 +52,7 @@
   <el-form-item label="其他" prop="otherCertUrl" style="margin-left:-275px;margin-top:-25px;"><br/>
     <el-upload
     class="avatar-uploader"
-    action="http://chstpa.chstpa.com/member/uploadPhoto?name=otherCertUrl"
+    action="https://chstpa.chstpa.com/member/uploadPhoto?name=otherCertUrl"
     :show-file-list="false"
     :on-success="FotherCertUrl"
     :before-upload="beforeAvatarUpload"  style="margin-left:-50px;margin-top:2px; border: 1px dashed #d9d9d9; width: 340px;

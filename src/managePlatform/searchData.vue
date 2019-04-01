@@ -95,7 +95,7 @@ import Viewer from 'viewerjs';
     methods: {
         verify(state){
             this.http
-            .get('http://chstpa.chstpa.com/member/verifyMember', {
+            .get('https://chstpa.chstpa.com/member/verifyMember', {
               params: {
                   userName: String(this.ruleForm.userName),
                   state:state,

@@ -4,7 +4,7 @@
   <el-form-item label="" prop="signature"  class="huiyuan" > 
     <el-upload
       class="avatar-uploader"
-      action="http://chstpa.chstpa.com/member/uploadPhoto?name=signature"
+      action="https://chstpa.chstpa.com/member/uploadPhoto?name=signature"
       :show-file-list="false"
       :on-success="Fsignature"
       :before-upload="beforeAvatarUpload"  style="margin-left:-100px;margin-top:12px; border: 1px dashed #d9d9d9; width: 200px;
@@ -40,7 +40,7 @@
       };
     },
     created() {
-        this.httpFc('http://chstpa.chstpa.com/member/WordExport').then(res => {
+        this.httpFc('https://chstpa.chstpa.com/member/WordExport').then(res => {
             if (+res.err.code === 200) {
                 this.url = res.data.url
             }else{
@@ -62,7 +62,7 @@
     methods: { 
       submitForm(ruleForm) {
           this.http
-          .post('http://chstpa.chstpa.com/member/FirInfo?names=signature', this.ruleForm)
+          .post('https://chstpa.chstpa.com/member/FirInfo?names=signature', this.ruleForm)
           .then(res => {
               if (+res.err.code === 200) {
                   //alert("200");

@@ -35,7 +35,7 @@
   <el-form-item label="近期二寸照片" prop="reTwoInchPhoto" style="margin-top:-52px;margin-left:7px;"><br/>
       <el-upload
     class="avatar-uploader"
-    action="http://chstpa.chstpa.com/member/uploadPhoto?name=reTwoInchPhoto"
+    action="https://chstpa.chstpa.com/member/uploadPhoto?name=reTwoInchPhoto"
     :show-file-list="false"
     :on-success="handleAvatarSuccess"
     :before-upload="beforeAvatarUpload"  style="margin-left:20px;margin-top:5px;margin-left:-98px;">
@@ -205,7 +205,7 @@
         this.$refs[ruleForm].validate((valid) => {
           if (valid) {
             this.http
-            .post('http://127.0.0.1:8888/member/FirInfo', this.ruleForm)
+            .post('https://chstpa.chstpa.com/member/FirInfo', this.ruleForm)
             .then(res => {
                 if (+res.err.code === 200) {
                     //alert("200");

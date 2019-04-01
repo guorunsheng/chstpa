@@ -25,7 +25,7 @@ export default {
   methods: {
     getData() {
       this.http
-      .get('http://chstpa.chstpa.com/article/getArticle', {
+      .get('https://chstpa.chstpa.com/article/getArticle', {
           params: {
               c: this.$route.query.c,
               id: this.$route.query.id

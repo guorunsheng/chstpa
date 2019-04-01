@@ -30,7 +30,7 @@ export default {
   methods: {
     getDate() {
       this.http
-        .get('http://chstpa.chstpa.com/article/getNews')
+        .get('https://chstpa.chstpa.com/article/getNews')
         .then(res => {
           if (+res.err.code === 200) {
             this.title = res.data.notice.title

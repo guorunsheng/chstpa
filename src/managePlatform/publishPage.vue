@@ -57,7 +57,7 @@ export default {
     methods: {
       onSubmit() {
         this.http
-        .post('http://chstpa.chstpa.com/article/saveArticle', this.form)
+        .post('https://chstpa.chstpa.com/article/saveArticle', this.form)
         .then(res => {
             if (+res.err.code === 200) {
                 this.$router.push('pageList')
@@ -80,7 +80,7 @@ export default {
           let r = this.$route
           if (r.query.id) {
               this.http
-                .get('http://chstpa.chstpa.com/article/getArticle', {
+                .get('https://chstpa.chstpa.com/article/getArticle', {
                     params: {
                         id: r.query.id
                     }
@@ -128,12 +128,12 @@ export default {
         }
     },
     created() {
-        this.httpFc('http://chstpa.chstpa.com/article/getArticleCate').then(res => {
+        this.httpFc('https://chstpa.chstpa.com/article/getArticleCate').then(res => {
             if (+res.err.code === 200) {
                 this.typeArr = res.data.data
             }
         })
-        this.httpFc('http://chstpa.chstpa.com/article/getArticleResource').then(res => {
+        this.httpFc('https://chstpa.chstpa.com/article/getArticleResource').then(res => {
             if (+res.err.code === 200) {
                 this.sourceArr = res.data.data
             }

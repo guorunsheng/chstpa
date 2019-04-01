@@ -36,7 +36,7 @@ export default {
     submitFc() {
       this.form.personNum && this.http
         .get(
-          "http://chstpa.chstpa.com/member/searchMember",
+          "https://chstpa.chstpa.com/member/searchMember",
           {
             params: {
               name: this.form.personNum

@@ -25,19 +25,19 @@ export default {
     switch (this.title) {
       case 'meeting': 
         this.tit = '会议'
-        this.getData('http://chstpa.chstpa.com/article/getArticle?c=4&id=0')
+        this.getData('https://chstpa.chstpa.com/article/getArticle?c=4&id=0')
         break
       case 'member':
         this.tit = '会员风采'
-        this.getData('http://chstpa.chstpa.com/article/getArticle?c=5&id=0')
+        this.getData('https://chstpa.chstpa.com/article/getArticle?c=5&id=0')
         break
       case 'library':
         this.tit = '扶贫共建'
-        this.getData('http://chstpa.chstpa.com/article/getArticle?c=6&id=0')
+        this.getData('https://chstpa.chstpa.com/article/getArticle?c=6&id=0')
         break
       case 'learningData':
         this.tit = '学术资料'
-        this.getData('http://chstpa.chstpa.com/article/getArticle?c=7&id=0')
+        this.getData('https://chstpa.chstpa.com/article/getArticle?c=7&id=0')
         break
     }
   },

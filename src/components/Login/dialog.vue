@@ -92,7 +92,7 @@ export default {
       this.$router.push("YzmForm");
     },
     updataYZM() {
-      this.http.get("http://chstpa.chstpa.com/verify/getVerifyCode", {
+      this.http.get("https://chstpa.chstpa.com/verify/getVerifyCode", {
         params: {
           rnd: Math.random()
         }
@@ -114,8 +114,8 @@ export default {
           console.log(this.showStatus.whitchOper);
           // 0 注册， 1 登录
           let url = this.showStatus.whitchOper
-            ? "http://chstpa.chstpa.com/login"
-            : "http://chstpa.chstpa.com/registered"
+            ? "https://chstpa.chstpa.com/login"
+            : "https://chstpa.chstpa.com/registered"
 
           let params = this.showStatus.whitchOper
             ? {
@@ -159,7 +159,7 @@ export default {
     setPhoneCode() {
       this.timing = true
       this.http
-      .post('http://chstpa.chstpa.com/verify/getPhoneCode', {
+      .post('https://chstpa.chstpa.com/verify/getPhoneCode', {
         phone: this.form.phone
       })
       .then(res => {

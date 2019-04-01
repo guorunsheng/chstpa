@@ -56,7 +56,7 @@ export default {
     }
   },
   created() {
-        this.httpFc('http://chstpa.chstpa.com/member/AuthMember').then(res => {
+        this.httpFc('https://chstpa.chstpa.com/member/AuthMember').then(res => {
             if (+res.err.code === 200) {
                 this.ruleForm = res.data.member
                 this.ruleForm.reTwoInchPhoto = res.data.member.reTwoInchPhoto

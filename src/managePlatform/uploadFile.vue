@@ -3,7 +3,7 @@
         <el-upload
             class="upload-demo"
             drag
-            action="http://chstpa.chstpa.com/upload/downloadUp"
+            action="https://chstpa.chstpa.com/upload/downloadUp"
             multiple>
             <i class="el-icon-upload"></i>
             <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>

@@ -32,7 +32,7 @@ export default {
   methods: {
     getData() {
       this.http
-      .get('http://chstpa.chstpa.com/upload/getDownload', {
+      .get('https://chstpa.chstpa.com/upload/getDownload', {
           params: {
               state:1,
               num: this.initNum

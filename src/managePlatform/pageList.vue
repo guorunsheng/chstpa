@@ -57,7 +57,7 @@ export default {
     methods: {
         getAllPages(v, num = 0) {
            this.http
-          .get('http://chstpa.chstpa.com/article/searchArticle', {
+          .get('https://chstpa.chstpa.com/article/searchArticle', {
               params: {
                   name: String(v),
                   num: num
@@ -73,7 +73,7 @@ export default {
         delPage(id) {
             let _this = this
             this.http
-            .get('http://chstpa.chstpa.com/article/delArticle', {
+            .get('https://chstpa.chstpa.com/article/delArticle', {
                 params: {
                     id
                 }

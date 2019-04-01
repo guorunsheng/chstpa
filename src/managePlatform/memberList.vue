@@ -83,7 +83,7 @@ export default {
     methods: {
         getAllPages(v, num = 0) {
            this.http
-          .get('http://chstpa.chstpa.com/member/memberList', {
+          .get('https://chstpa.chstpa.com/member/memberList', {
               params: {
                   name:v,
                   num: num
