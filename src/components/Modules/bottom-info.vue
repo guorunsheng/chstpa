@@ -21,14 +21,14 @@
          <ul>
            <li style="">网址：<a href="https://www.chstpa.com">www.chstpa.com</a></li>
            <li>备案号：京ICP备18045235号-1</li> 
-           <li>地址：北京市朝阳区东三环北路甲2号京信大厦1334室</li>
+           <li>地址：北京市东城区干面胡同51号北楼二层</li>
          </ul>
        </div>
         <div class="oper-col-item" style="margin-left:-20px;" >
          <ul style="">
-         <li>邮编：100027</li>
+         <li>邮编：100010</li>
          <li>邮箱：bangongshi@chstpa.com</li> 
-          <li>电话：010-62057688</li> 
+         <li>电话：010-62057688</li> 
         
          </ul>
         </div>

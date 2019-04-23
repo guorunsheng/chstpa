@@ -25,6 +25,7 @@ import verifyMemberQ from '@/managePlatform/verifyMemberQ'
 import memberList from '@/managePlatform/memberList'
 
 import searchData from '@/managePlatform/searchData'
+import tinymce from '@/components/timc/index'
 
 Vue.use(Router)
 
@@ -65,6 +66,11 @@ const router = new Router({
           path: 'downLoad',
           name: '表格下载',
           component: DownLoad
+        },
+        {
+          path: 'tinymce',
+          name: 'tinymce',
+          component: tinymce
         },
         {
           path: 'member',

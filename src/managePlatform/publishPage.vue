@@ -24,8 +24,10 @@
                 <el-input v-model="form.summary"></el-input>
             </el-form-item>
             <el-form-item label="内容" prop='content'>
-                <div id="editorElem"></div>
+                <!-- <div id="editorElem"></div> -->
                 <!-- <ueditorOne ref="diseaseFileUeditor"></ueditorOne> -->
+                <tinymce ref="richText" v-model="form.content" @on-upload-complete="onEditorUploadComplete">
+    </tinymce>
             </el-form-item>
             <el-form-item>
                 <el-button type="primary" @click="onSubmit" :disabled='!(this.form.title && this.form.cateId && this.form.editor && this.form.summary && this.form.resource && this.form.content)'>发布</el-button>
@@ -37,6 +39,7 @@
 
 <script>
 import E from 'wangeditor'
+import tinymce from "../components/TinyMce/TinyMce"
 export default {
     data() {
       return {
@@ -93,16 +96,17 @@ export default {
                         this.form.resource = res.data.resourceId;
                         this.form.summary = res.data.summary;
                         this.form.cateId = res.data.cateId;
-
-                        var editor = new E('#editorElem')
-                        editor.customConfig.uploadImgShowBase64 = true
-                        editor.customConfig.zIndex = 1
-                        editor.customConfig.onchange = (html) => {
-                        console.log(html)
-                        this.form.content = html
-                        }
-                        editor.create()
-                        editor.txt.html(res.data.article)
+                        
+                        // var editor = new E('#editorElem')
+                        // editor.customConfig.uploadImgShowBase64 = true
+                        // editor.customConfig.zIndex = 1
+                        // editor.customConfig.onchange = (html) => {
+                        // console.log(html)
+                         this.form.content = res.data.article
+                        //}
+                        // editor.create()
+                        // editor.txt.html(res.data.article)
+                        this.$refs.richText.setContent(this.form.content);
                     } else {
                         this.$message.error(res.err.desc);
                     }
@@ -111,20 +115,33 @@ export default {
                     console.log(e)
                 })
           }
-      }
+      },
+      onEditorUploadComplete(res) {
+        if (res.code == 0) {
+            this.$message({
+            type: 'success',
+            message: '上传成功'
+            })
+        } else {
+            this.$message({
+            type: 'error',
+            message: res.msg
+            })
+        }
+      },
     },
     mounted() {
         if (this.$route.query.id) {
             this.routerDetection()
         } else {
-            var editor = new E('#editorElem')
-            editor.customConfig.uploadImgShowBase64 = true
-            editor.customConfig.zIndex = 1
-            editor.customConfig.onchange = (html) => {
-            console.log(html)
-            this.form.content = html
-            }
-            editor.create()
+            // var editor = new E('#editorElem')
+            // editor.customConfig.uploadImgShowBase64 = true
+            // editor.customConfig.zIndex = 1
+            // editor.customConfig.onchange = (html) => {
+            // console.log(html)
+            // this.form.content = html
+            // }
+            // editor.create()
         }
     },
     created() {
@@ -140,6 +157,7 @@ export default {
         })
     },
     components: {
+        tinymce
     }
 }
 </script>
